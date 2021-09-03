@@ -5,6 +5,6 @@ D
 C
 B
 D
-C
+B
 D
 B
