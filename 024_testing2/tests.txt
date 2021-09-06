@@ -1,0 +1,12 @@
+aaabc aaabb
+aaaaa aaabb
+abcad accce
+abcad aacde
+aaaba bbbee
+abcde fghij
+abced vwxyza
+aaaaaa bbbbbb
+      ab
+ab 12 5
+ A    AAAAA
+*abc* **sd
