@@ -35,7 +35,7 @@ int main(void) {
     return EXIT_FAILURE;
   }
   yourGuess = atoi(buffer);
-  x if (yourGuess == total) {
+  if (yourGuess == total) {
     printf("You win round 2 also!\n");
     return EXIT_SUCCESS;
   }
