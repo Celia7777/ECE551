@@ -10,16 +10,15 @@ void printDigits(int x) {
     printDigits(-x);
   }
   else {
-    int a = x/10;
-    int b = x %10;
-    printf("a=%d, b=%d\n",a,b);
+    int a = x / 10;
+    int b = x % 10;
+    printf("a=%d, b=%d\n", a, b);
     if (a != 0) {
       printDigits(a);
     }
-    printf("%d",b);
+    printf("%d", b);
   }
 }
-
 
 int main(void) {
   printDigits(297);
