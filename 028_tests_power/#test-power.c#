@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+unsigned power(unsigned x, unsigned y);
+
+void run_check(unsigned x, unsigned y, unsigned expexted_ans) {
+  unsigned test_value = power(x, y);
+  if (test_value != expexted_ans) {
+    printf("Test: %u to the %u power is %u:\n", x, y, test_value);
+    exit(EXIT_FAILURE);
+  }
+}
+
+int main() {
+  run_check(2, 3, 8);
+  run_check(1, 0, 1);
+  run_check(0, 0, 1);
+  run_check(-3, 2, 9);
+  run_check(-3, 3, -27);
+  run_check(unsigned int x, unsigned int y, unsigned int expexted_ans)
+
+  exit(EXIT_SUCCESS);
+}
