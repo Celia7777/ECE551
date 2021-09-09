@@ -1,0 +1,66 @@
+Grading at 09/09/2021:01:33:20.693365
+For commit ID 22693b216de178adc1f879c848b39d5eaaeb61e5
+Grading at Wed Sep  8 21:33:19 EDT 2021
+**Testing broken implementation 10 **
+-------------------------------------
+
+Test: 2 to the 3 power is 2:
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+Test: 4294967293 to the 2 power is 25:
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+Test: 2 to the 3 power is 2:
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+Test: 2 to the 3 power is 9:
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+Test: 0 to the 0 power is 0:
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+Test: 4294967293 to the 3 power is 65509:
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+Test: 2 to the 3 power is 0:
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+Test: 1 to the 1024 power is 0:
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+Test: 2 to the 3 power is 27:
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+Test: 2 to the 3 power is 6:
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+Test: 2 to the 3 power is 0:
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
