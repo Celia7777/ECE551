@@ -9,6 +9,10 @@ void run_check(unsigned x, unsigned y, unsigned expexted_ans) {
     printf("Test: %u to the %u power is %u:\n", x, y, test_value);
     exit(EXIT_FAILURE);
   }
+  else {
+    printf("You are right!\n");
+    exit(EXIT_SUCCESS);
+  }
 }
 
 int main() {
