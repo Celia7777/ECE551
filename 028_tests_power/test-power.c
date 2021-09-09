@@ -20,11 +20,6 @@ int main() {
   run_check(0, 2, 0);
   run_check(-3, 2, 9);
   run_check(-3, 3, -27);
-  run_check(2, 33, (unsigned)8589934592);
-  run_check('a', 2, 9409);
-  run_check('a', 1, 'a');
-  run_check('a', 0, 1);
-  run_check((unsigned)-1.5, 0, 1);
 
   exit(EXIT_SUCCESS);
 }
