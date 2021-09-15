@@ -1,0 +1,119 @@
+Grading at 09/15/2021:21:43:26.859841
+For commit ID 1f0d1797632ec7171a058c17087820d590bdcc34
+Grading at Wed Sep 15 17:43:25 EDT 2021
+**Testing broken implementation 10 **
+-------------------------------------
+
+Correct answer 1!
+Correct answer 7!
+Correct answer 3!
+Correct answer 1!
+Correct answer 4!
+Correct answer 2!
+Correct answer 3!
+Correct answer 4!
+The answer 2 is wrong.
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+The answer 2 is wrong.
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+The answer 3 is wrong.
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+Correct answer 1!
+Correct answer 7!
+Correct answer 3!
+Correct answer 1!
+Correct answer 4!
+The answer 1 is wrong.
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+Correct answer 1!
+Correct answer 7!
+Correct answer 3!
+Correct answer 1!
+Correct answer 4!
+Correct answer 2!
+Correct answer 3!
+Correct answer 4!
+Correct answer 3!
+The answer 2 is wrong.
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+Correct answer 1!
+Correct answer 7!
+Correct answer 3!
+Correct answer 1!
+Correct answer 4!
+Correct answer 2!
+Correct answer 3!
+Correct answer 4!
+Correct answer 3!
+Correct answer 1!
+Correct answer 6!
+Correct answer 2!
+The answer 1 is wrong.
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+Correct answer 1!
+The answer 9 is wrong.
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+The answer 0 is wrong.
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+The answer -1 is wrong.
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+Correct answer 1!
+The answer 1 is wrong.
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+Correct answer 1!
+Correct answer 7!
+Correct answer 3!
+Correct answer 1!
+Correct answer 4!
+The answer 1 is wrong.
+
+**Testing correct implementation **
+-------------------------------------
+
+Correct answer 1!
+Correct answer 7!
+Correct answer 3!
+Correct answer 1!
+Correct answer 4!
+Correct answer 2!
+Correct answer 3!
+Correct answer 4!
+Correct answer 3!
+Correct answer 1!
+Correct answer 6!
+Correct answer 2!
+Correct answer 0!
+
+All test programs were handled correctly
+
+Overall Grade: PASSED
