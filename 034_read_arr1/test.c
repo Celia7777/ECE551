@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 int main(void) {
-  int anArray[] = {5,16,33,99};
+  int anArray[] = {5, 16, 33, 99};
   int * p = anArray;
   printf("*p = %d\n", *p);
   p++;
@@ -14,8 +13,8 @@ int main(void) {
   *x = p;
   **x = 42;
   q[1] = 9;
-  for (int i =0; i < 4; i++){
-    printf("anArray[%d] = %d\n",i, anArray[i]);
+  for (int i = 0; i < 4; i++) {
+    printf("anArray[%d] = %d\n", i, anArray[i]);
   }
   return EXIT_SUCCESS;
 }
