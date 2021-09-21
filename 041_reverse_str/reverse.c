@@ -4,6 +4,20 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  char * ptr1 = str;
+  int length = 1;
+  while (*ptr1 != '\0') {
+    length++;
+    ptr1++;
+  }
+  //  printf("length %d\n", length);
+
+  char ptr2[100] = {0};
+  strncpy(ptr2, str, length);
+  for (int i = 0; i < length - 1; i++) {
+    str[i] = ptr2[length - 2 - i];
+  }
+  str[length - 1] = '\0';
 }
 
 int main(void) {
@@ -13,7 +27,8 @@ int main(void) {
   char str3[] = "Captain's log, Stardate 42523.7";
   char str4[] = "Hello, my name is Inigo Montoya.";
   char str5[] = "You can be my wingman anyday!";
-  char str6[] = "Executor Selendis! Unleash the full power of your forces! There may be no tomorrow!";
+  char str6[] = "Executor Selendis! Unleash the full power of your forces! There may be "
+                "no tomorrow!";
   char * array[] = {str0, str1, str2, str3, str4, str5, str6};
   for (int i = 0; i < 7; i++) {
     reverse(array[i]);
