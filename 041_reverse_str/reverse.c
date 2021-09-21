@@ -12,7 +12,7 @@ void reverse(char * str) {
   }
   //  printf("length %d\n", length);
 
-  char ptr2[100] = {0};
+  char ptr2[10000000] = {0};
   strncpy(ptr2, str, length);
   for (int i = 0; i < length - 1; i++) {
     str[i] = ptr2[length - 2 - i];
