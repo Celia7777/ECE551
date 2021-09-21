@@ -4,6 +4,10 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  if (str == NULL) {
+    return;
+  }
+
   char * ptr1 = str;
   int length = 1;
   while (*ptr1 != '\0') {
@@ -12,7 +16,7 @@ void reverse(char * str) {
   }
   //  printf("length %d\n", length);
 
-  char ptr2[10000000] = {0};
+  char ptr2[100] = {0};
   strncpy(ptr2, str, length);
   for (int i = 0; i < length - 1; i++) {
     str[i] = ptr2[length - 2 - i];
