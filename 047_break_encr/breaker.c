@@ -4,7 +4,7 @@
 
 void frequency_count(FILE * f, int * array) {
   int c;
-  while ((c = fgetc(f) != EOF)) {
+  while ((c = fgetc(f)) != EOF) {
     if (isalpha(c)) {
       c = tolower(c);
       array[c - 'a']++;
@@ -36,7 +36,7 @@ int solve_key(FILE * f) {
   else {
     key = 22 + e_index;
   }
-  printf("%d\n", key);
+  fprintf(stdout, "%d\n", key);
   return key;
 }
 
