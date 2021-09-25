@@ -14,10 +14,10 @@ void rotate_matrix(FILE * f) {
         fprintf(stderr, "The line in the input file has wrong size.");
         exit(EXIT_FAILURE);
       }
-      //    if (strchr(input_line, '\n') == NULL) {
-      //fprintf(stderr, "The line in the input file is more than 11 char.");
-      //exit(EXIT_FAILURE);
-      //}
+      if (strchr(input_line, '\n') == NULL) {
+        fprintf(stderr, "The line in the input file is more than 11 char.");
+        exit(EXIT_FAILURE);
+      }
       if (strlen(input_line) < 11) {
         fprintf(stderr, "The line contain less than 10 char");
         exit(EXIT_FAILURE);
