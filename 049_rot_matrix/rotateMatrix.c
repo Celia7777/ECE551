@@ -32,7 +32,7 @@ void rotate_matrix(FILE * f) {
     }
     line_num++;
   }
-  if (line_num < 10) {
+  if (line_num != 10) {
     fprintf(stderr, "The size of lines is incorrect.");
     exit(EXIT_FAILURE);
   }
