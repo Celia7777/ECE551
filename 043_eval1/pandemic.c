@@ -45,11 +45,11 @@ country_t parseLine(char * line) {
     fprintf(stderr, "There is no country name, or the name is too long");
     exit(EXIT_FAILURE);
   }
-  //check if the country name is only a blank, eg.  ,3565656
-  if (name_length == 1 && line[0] == ' ') {
-    fprintf(stderr, "The name of country is only a blank");
-    exit(EXIT_FAILURE);
-  }
+  //  //check if the country name is only a blank, eg.  ,3565656
+  // if (name_length == 1 && line[0] == ' ') {
+  // fprintf(stderr, "The name of country is only a blank");
+  // exit(EXIT_FAILURE);
+  // }
 
   //Extract the country name
   //and check if it contains other char except alphabet
