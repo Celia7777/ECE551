@@ -13,7 +13,7 @@ void check_purenumber(char * start, char * end) {
     exit(EXIT_FAILURE);
   }
   while (start != end) {
-    if (isdigit(*start) == 0) {
+    if (isdigit(*start) == 0 && *start != ' ') {
       fprintf(stderr, "The population is not a pure number.");
       exit(EXIT_FAILURE);
     }
@@ -47,12 +47,8 @@ country_t parseLine(char * line) {
     fprintf(stderr, "The input has no comma.");
     exit(EXIT_FAILURE);
   }
-
-  //  //check if population is digits or not
-  //if (isdigit(*(comma_ptr + 1)) == 0) {
-  //fprintf(stderr, "The format of population is wrong, the first is not digit.");
-  //exit(EXIT_FAILURE);
-  //}
+  //check if the population if a pure number or not
+  check_purenumber(comma_ptr + 1, newline_ptr);
 
   //compute the length of the string of the country name
   length = strlen(line);
@@ -84,14 +80,6 @@ country_t parseLine(char * line) {
   //base 10, decimal
   popul_num = strtoll((comma_ptr + 1), &popul_valid_num_end, 10);
   ans.population = popul_num;
-  check_purenumber(comma_ptr + 1, newline_ptr);
-
-  //  //check the format of population, if it's a number or not
-  //if (*popul_valid_num_end != '\n') {
-  // fprintf(stderr, "The format of population is wrong.");
-  // exit(EXIT_FAILURE);
-  //}
-
   return ans;
 }
 
