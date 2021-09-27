@@ -1,13 +1,20 @@
 #error
 printCountries country1.csv
-printCountries country2.csv
-printCountries country3.csv
 printCountries country4.csv
+printCountries country5.csv
+printCountries country6.csv
+printCountries country7.csv
+printCountries country8.csv
+printCountries country9.csv
+printCountries country10.csv
+printCountries country11.csv
 printRunningAvg inputAvg.csv
 printDailyMax tie.csv
 
 #success
 printCountries population.csv
+printCountries country2.csv
+printCountries country3.csv
 printRunningAvg population.csv daily_cases.csv
 printCumulative population.csv daily_cases.csv
 printDailyMax population.csv daily_cases.csv
