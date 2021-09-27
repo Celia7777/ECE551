@@ -13,7 +13,7 @@ void check_purenumber(char * start, char * end) {
     exit(EXIT_FAILURE);
   }
   while (start != end) {
-    if (isdigit(*start) == 0 && *start != ' ') {
+    if (isdigit(*start) == 0) {
       fprintf(stderr, "The population is not a pure number.");
       exit(EXIT_FAILURE);
     }
