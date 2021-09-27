@@ -34,7 +34,7 @@ country_t parseLine(char * line) {
       popul_valid_num_end;  //point to the first element which is not valid number, in population part
   uint64_t popul_num;
 
-  //check if there is a line or not
+  //check if there is a line array or not
   if (line == NULL) {
     fprintf(stderr, "There is no line array.");
     exit(EXIT_FAILURE);
@@ -63,12 +63,11 @@ country_t parseLine(char * line) {
 
   //check the size of the country name string
   if (name_length > MAX_NAME_LEN) {
-    fprintf(stderr, "There is no country name, or the name is too long");
+    fprintf(stderr, "The length of name is too long");
     exit(EXIT_FAILURE);
   }
 
   //Extract the country name
-  //and check if it contains other char except alphabet
   for (size_t j = 0; j < name_length; j++) {
     ans.name[j] = line[j];
   }
@@ -86,7 +85,7 @@ country_t parseLine(char * line) {
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   double first_7d_sum = 0;  //initialize the sum of first 7 days
 
-  //some testcases
+  //Some Testcases//
   //check if there is data array or not
   if (data == NULL) {
     fprintf(stderr, "There is no data array.");
@@ -121,7 +120,7 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   double per_people = 100000;
   double population = (double)pop;
 
-  //some testcases
+  //Some Testcases//
   //check if there is data array or not
   if (data == NULL) {
     fprintf(stderr, "There is no data array.");
@@ -154,7 +153,7 @@ void printCountryWithMax(country_t * countries,
   unsigned tie = 0;  //to check if there is a tie
   char * country_name;
 
-  //testcases
+  //Some Testcases//
   //check if there is data array or not
   if (data == NULL) {
     fprintf(stderr, "There is no data array.");
