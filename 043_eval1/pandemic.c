@@ -25,7 +25,7 @@ country_t parseLine(char * line) {
   }
   //check if population is digits or not
   if (isdigit(*(comma_ptr + 1)) == 0) {
-    fprintf(stderr, "The format of population is wrong.");
+    fprintf(stderr, "The format of population is wrong, the first is not digit.");
     exit(EXIT_FAILURE);
   }
 
@@ -73,6 +73,11 @@ country_t parseLine(char * line) {
   popul_num = strtoll((comma_ptr + 1), &popul_valid_num_end, 10);
   ans.population = popul_num;
 
+  //check the population is valid or not
+  if (popul_num <= 0) {
+    fprintf(stderr, "The population is invalid.");
+    exit(EXIT_FAILURE);
+  }
   //check the format of population, if it's a number or not
   if (*popul_valid_num_end != '\n') {
     fprintf(stderr, "The format of population is wrong.");
