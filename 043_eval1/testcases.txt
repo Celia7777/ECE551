@@ -6,6 +6,7 @@ printCountries country7.csv
 printCountries country9.csv
 printCountries country10.csv
 printCountries country11.csv
+printCountries country12.csv
 printRunningAvg inputAvg.csv
 printDailyMax tie.csv
 
@@ -15,7 +16,6 @@ printCountries country2.csv
 printCountries country3.csv
 printCountries country6.csv
 printCountries country8.csv
-printCountries country12.csv
 printCountries country13.csv
 printCountries country14.csv
 printCountries country15.csv
