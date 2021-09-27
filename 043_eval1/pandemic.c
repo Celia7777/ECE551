@@ -5,29 +5,54 @@
 #include <stdlib.h>
 #include <string.h>
 
+//use to check the population part is a pure number or not later
+//start and end point to the start and end bits of population
+void check_purenumber(char * start, char * end) {
+  if (start == end) {
+    fprintf(stderr, "The population format is wrong.");
+    exit(EXIT_FAILURE);
+  }
+  while (start != end) {
+    if (isdigit(*start) == 0) {
+      fprintf(stderr, "The population is not a pure number.");
+      exit(EXIT_FAILURE);
+    }
+    start++;
+  }
+}
+
 country_t parseLine(char * line) {
   country_t ans;
   ans.name[0] = '\0';
   ans.population = 0;
 
-  char * comma_ptr;  //a pointer to the comma
-  size_t length;     //size of line
+  char * comma_ptr;    //a pointer to the comma
+  char * newline_ptr;  //a pointer to the newline
+  size_t length;       //size of line
   size_t name_length = 0;
   char *
       popul_valid_num_end;  //point to the first element which is not valid number, in population part
   uint64_t popul_num;
 
+  //check if there is a line or not
+  if (line == NULL) {
+    fprintf(stderr, "There is no line array.");
+    exit(EXIT_FAILURE);
+  }
+
   comma_ptr = strchr(line, ',');
+  newline_ptr = strchr(line, '\n');
   // check if there is a comma or not
   if (comma_ptr == NULL) {
     fprintf(stderr, "The input has no comma.");
     exit(EXIT_FAILURE);
   }
-  //check if population is digits or not
-  if (isdigit(*(comma_ptr + 1)) == 0) {
-    fprintf(stderr, "The format of population is wrong, the first is not digit.");
-    exit(EXIT_FAILURE);
-  }
+
+  //  //check if population is digits or not
+  //if (isdigit(*(comma_ptr + 1)) == 0) {
+  //fprintf(stderr, "The format of population is wrong, the first is not digit.");
+  //exit(EXIT_FAILURE);
+  //}
 
   //compute the length of the string of the country name
   length = strlen(line);
@@ -45,24 +70,11 @@ country_t parseLine(char * line) {
     fprintf(stderr, "There is no country name, or the name is too long");
     exit(EXIT_FAILURE);
   }
-  //  //check if the country name is only a blank, eg.  ,3565656
-  // if (name_length == 1 && line[0] == ' ') {
-  // fprintf(stderr, "The name of country is only a blank");
-  // exit(EXIT_FAILURE);
-  // }
 
   //Extract the country name
   //and check if it contains other char except alphabet
   for (size_t j = 0; j < name_length; j++) {
     ans.name[j] = line[j];
-    // if (isalpha(line[j]) != 0 || isblank(line[j]) != 0) {
-    // ans.name[j] = line[j];
-    // }
-    // else {
-    // fprintf(stderr,
-    //        "The format of name is wrong, contain element which is not alphabet.");
-    // exit(EXIT_FAILURE);
-    // }
   }
   ans.name[name_length] = '\0';
 
@@ -72,17 +84,13 @@ country_t parseLine(char * line) {
   //base 10, decimal
   popul_num = strtoll((comma_ptr + 1), &popul_valid_num_end, 10);
   ans.population = popul_num;
+  check_purenumber(comma_ptr + 1, newline_ptr);
 
-  //check the population is valid or not
-  //  if (popul_num <= 0) {
-  // fprintf(stderr, "The population is invalid.");
+  //  //check the format of population, if it's a number or not
+  //if (*popul_valid_num_end != '\n') {
+  // fprintf(stderr, "The format of population is wrong.");
   // exit(EXIT_FAILURE);
   //}
-  //check the format of population, if it's a number or not
-  if (*popul_valid_num_end != '\n') {
-    fprintf(stderr, "The format of population is wrong.");
-    exit(EXIT_FAILURE);
-  }
 
   return ans;
 }
