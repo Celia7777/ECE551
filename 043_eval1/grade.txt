@@ -1,6 +1,6 @@
-Grading at 09/27/2021:07:02:35.142662
-For commit ID 1985aa81c91bd641c00901693f8c235653074656
-Grading at Mon Sep 27 03:02:20 EDT 2021
+Grading at 09/27/2021:07:13:45.131362
+For commit ID a5970d002de8fb1115560e46e20c5a6a42a9c0f1
+Grading at Mon Sep 27 03:13:30 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -26,10 +26,16 @@ Test case printCountries country10.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries country11.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries country16.csv
-Our printCountries does not consider this an error case
+america: 0
+China: 1439323774
+Germany: 83783945
+India: 1380004385
+Nigeria: 206139587
+Norway: 5421242
+South Korea: 51269183
+United Kingdom: 67886004
+United States: 331002647
+Your program did not indicate a failure case
 
 Compiling printRunningAvg
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -75,6 +81,9 @@ Test case printCountries country14.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries country15.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries country16.csv
 Your file matched the expected output
 
 Compiling printRunningAvg
