@@ -41,7 +41,7 @@ country_t parseLine(char * line) {
   }
 
   //check the size of the country name string
-  if (name_length == 0 || name_length > MAX_NAME_LEN) {
+  if (name_length > MAX_NAME_LEN) {
     fprintf(stderr, "There is no country name, or the name is too long");
     exit(EXIT_FAILURE);
   }
@@ -54,14 +54,15 @@ country_t parseLine(char * line) {
   //Extract the country name
   //and check if it contains other char except alphabet
   for (size_t j = 0; j < name_length; j++) {
-    if (isalpha(line[j]) != 0 || isblank(line[j]) != 0) {
-      ans.name[j] = line[j];
-    }
-    else {
-      fprintf(stderr,
-              "The format of name is wrong, contain element which is not alphabet.");
-      exit(EXIT_FAILURE);
-    }
+    ans.name[j] = line[j];
+    // if (isalpha(line[j]) != 0 || isblank(line[j]) != 0) {
+    // ans.name[j] = line[j];
+    // }
+    // else {
+    // fprintf(stderr,
+    //        "The format of name is wrong, contain element which is not alphabet.");
+    // exit(EXIT_FAILURE);
+    // }
   }
   ans.name[name_length] = '\0';
 
