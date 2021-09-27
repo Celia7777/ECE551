@@ -1,6 +1,6 @@
-Grading at 09/27/2021:04:43:23.731325
-For commit ID 24f09e76e7527dab1d5240fd3506479ca9f3ede9
-Grading at Mon Sep 27 00:43:17 EDT 2021
+Grading at 09/27/2021:04:55:59.731338
+For commit ID 35ba4e7dcee0f0e99f9019f2ae123945681dc296
+Grading at Mon Sep 27 00:55:48 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -10,13 +10,28 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o pri
 Test case printCountries country1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries country2.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
-Test case printCountries country3.csv
-Our printCountries does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case printCountries country4.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries country5.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries country6.csv
+Our printCountries does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printCountries country7.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries country8.csv
+Our printCountries does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printCountries country9.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries country10.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries country11.csv
 Your program successfully indicated a failure case
 
 Compiling printRunningAvg
@@ -39,6 +54,14 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o pri
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries country2.csv
+Line_1_did_not_match
+Your file did not match the expected ouput
++-----------------------------------------------------------------------+
+Test case printCountries country3.csv
+Line_1_did_not_match
+Your file did not match the expected ouput
 
 Compiling printRunningAvg
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
