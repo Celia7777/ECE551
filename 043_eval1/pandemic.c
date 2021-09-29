@@ -80,18 +80,15 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //Some Testcases//
   //check if there is data array or not
   if (data == NULL) {
-    fprintf(stderr, "There is no data array.");
-    exit(EXIT_FAILURE);
+    return;
   }
   //check if there is result array or not
   if (avg == NULL) {
-    fprintf(stderr, "There is no where to store the results.");
-    exit(EXIT_FAILURE);
+    return;
   }
   //check if there is enough 7 days
   if (n_days < 7) {
-    fprintf(stderr, "The number of days is not enough.");
-    exit(EXIT_FAILURE);
+    return;
   }
   //compute the the seven-day running average
   else {
