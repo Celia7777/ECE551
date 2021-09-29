@@ -45,10 +45,10 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   //check if the population if a pure number or not
-  if (!(isdigit(*popul_ptr) != 0 || *popul_ptr == ' ' || *popul_ptr == '-')) {
-    fprintf(stderr, "The first part of population is not an number.");
-    exit(EXIT_FAILURE);
-  }
+  //  if (!(isdigit(*popul_ptr) != 0 || *popul_ptr == ' ' || *popul_ptr == '-')) {
+  // fprintf(stderr, "The first part of population is not an number.");
+  // exit(EXIT_FAILURE);
+  // }
 
   line_length = strlen(line);
   name_length = compute_firstlen(line, line_length);
@@ -66,6 +66,10 @@ country_t parseLine(char * line) {
 
   //convert the string of population to 64 int, base 10
   popul_num = strtoll(popul_ptr, &popul_valid_num_end, 10);
+  if (popul_valid_num_end == popul_ptr) {
+    fprintf(stderr, "The first part of population is not an number.");
+    exit(EXIT_FAILURE);
+  }
   ans.population = popul_num;
   return ans;
 }
@@ -155,6 +159,7 @@ void printCountryWithMax(country_t * countries,
   //check if there are enough days
   if (n_days <= 0) {
     fprintf(stderr, "There is not enough days data.");
+    exit(EXIT_FAILURE);
   }
 
   //find the maximum case data

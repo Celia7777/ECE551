@@ -5,6 +5,7 @@ printCountries step1_name_long.csv
 printCountries step1_popul_charfirst.csv
 printCountries step1_popul_charonly.csv
 printCountries step1_popul_none.csv
+printCountries step1_popul_negblk.csv
 printRunningAvg inputAvg.csv
 printDailyMax tie.csv
 
