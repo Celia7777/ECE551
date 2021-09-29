@@ -1,6 +1,6 @@
-Grading at 09/29/2021:19:21:56.031132
-For commit ID 0512503de572c431316d35849bd216eaf93564c2
-Grading at Wed Sep 29 15:21:36 EDT 2021
+Grading at 09/29/2021:20:04:18.160382
+For commit ID d304628ff9dd25cb0c49236e7e8991b4d152ff76
+Grading at Wed Sep 29 16:03:57 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -102,6 +102,12 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv tie.csv
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv step4_nulldata.csv
+Your file matched the expected output
+
+Grading has taken more than 20 seconds
+Skipping remaining test cases
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
