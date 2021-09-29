@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//compute the length of first part before comma in this format:"   ,   "
+//compute the length of first part before comma in any string in this format:"   ,   "
 size_t compute_firstlen(char * array, size_t size) {
   size_t first_length = 0;
   for (size_t i = 0; i < size; i++) {
@@ -26,11 +26,12 @@ country_t parseLine(char * line) {
   char * comma_ptr;    //a pointer to the comma
   char * popul_ptr;    //a pointer to the first of population
   size_t line_length;  //size of line
-  size_t name_length;
+  size_t name_length;  //size of the country name in line
   char *
       popul_valid_num_end;  //point to the first element which is not valid number, in population part
 
   uint64_t popul_num;
+
   //check if there is a line array or not
   if (line == NULL) {
     fprintf(stderr, "There is no line array.");
@@ -44,11 +45,6 @@ country_t parseLine(char * line) {
     fprintf(stderr, "The input has no comma.");
     exit(EXIT_FAILURE);
   }
-  //check if the population if a pure number or not
-  //  if (!(isdigit(*popul_ptr) != 0 || *popul_ptr == ' ' || *popul_ptr == '-')) {
-  // fprintf(stderr, "The first part of population is not an number.");
-  // exit(EXIT_FAILURE);
-  // }
 
   line_length = strlen(line);
   name_length = compute_firstlen(line, line_length);
@@ -65,6 +61,8 @@ country_t parseLine(char * line) {
   ans.name[name_length] = '\0';
 
   //convert the string of population to 64 int, base 10
+  //and check if the population is valid or not, popul_valid_num_end pointing the same
+  //thing as popul_ptr means popul_ptr points to nonvalid number
   popul_num = strtoll(popul_ptr, &popul_valid_num_end, 10);
   if (popul_valid_num_end == popul_ptr) {
     fprintf(stderr, "The first part of population is not an number.");
@@ -75,7 +73,7 @@ country_t parseLine(char * line) {
 }
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
-  double first_7d_sum = 0;  //initialize the sum of first 7 days
+  double first_7d_sum = 0;
 
   //Some Testcases//
   //check if there is data array or not
@@ -117,10 +115,6 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   if (cum == NULL) {
     return;
   }
-  //check if the population is zero or not
-  //  if (pop == 0) {
-  //  return;
-  //}
 
   //compute the cumulative number of cases that day per 100,000 people
   for (size_t i = 0; i < n_days; i++) {
