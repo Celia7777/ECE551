@@ -148,7 +148,7 @@ void printCountryWithMax(country_t * countries,
     return;
   }
   //check if there are enough days
-  if (n_days <= 0) {
+  if (n_days == 0) {
     return;
   }
 
