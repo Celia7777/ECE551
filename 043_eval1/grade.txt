@@ -1,6 +1,6 @@
-Grading at 09/29/2021:20:04:18.160382
-For commit ID d304628ff9dd25cb0c49236e7e8991b4d152ff76
-Grading at Wed Sep 29 16:03:57 EDT 2021
+Grading at 09/29/2021:20:06:37.116147
+For commit ID 4309b2b665d83f1c73cfcd0a7a3a6d9ee661bf09
+Grading at Wed Sep 29 16:06:24 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -29,42 +29,6 @@ Test case printCountries step1_popul_negblk.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_name_blk.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_name_char.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_name_digit.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_name_onlychar_right.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_name_none.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_popul_0.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_popul_00000.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_popul_00099.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_popul_blkfirst.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_popul_charback.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_popul_neg.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries step1_popul_frac.csv
 Your file matched the expected output
 
 Compiling printRunningAvg
@@ -105,11 +69,12 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv step4_nulldata.csv
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printDailyMax step4_nullcountry.csv daily_cases.csv
+Line_1_did_not_match
+Your file did not match the expected output
 
-Grading has taken more than 20 seconds
-Skipping remaining test cases
-
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
