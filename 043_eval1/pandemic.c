@@ -92,7 +92,6 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   }
 
   //compute the the seven-day running average
-
   for (size_t i = 0; i < 7; i++) {
     first_7d_sum += data[i];
   }
@@ -112,19 +111,16 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   //Some Testcases//
   //check if there is data array or not
   if (data == NULL) {
-    fprintf(stderr, "There is no data array.");
-    exit(EXIT_FAILURE);
+    return;
   }
   //check if there is result array or not
   if (cum == NULL) {
-    fprintf(stderr, "There is no where to store the results.");
-    exit(EXIT_FAILURE);
+    return;
   }
   //check if the population is zero or not
-  if (pop == 0) {
-    fprintf(stderr, "The population cannot be zero.");
-    exit(EXIT_FAILURE);
-  }
+  //  if (pop == 0) {
+  //  return;
+  //}
 
   //compute the cumulative number of cases that day per 100,000 people
   for (size_t i = 0; i < n_days; i++) {
@@ -145,18 +141,15 @@ void printCountryWithMax(country_t * countries,
   //Some Testcases//
   //check if there is data array or not
   if (data == NULL) {
-    fprintf(stderr, "There is no data array.");
-    exit(EXIT_FAILURE);
+    return;
   }
   //check if there is country info or not
   if (countries == NULL) {
-    fprintf(stderr, "There is no country info.");
-    exit(EXIT_FAILURE);
+    return;
   }
   //check if there are enough days
   if (n_days <= 0) {
-    fprintf(stderr, "There is not enough days data.");
-    exit(EXIT_FAILURE);
+    return;
   }
 
   //find the maximum case data
