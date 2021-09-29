@@ -5,18 +5,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-//compute the length of country's name string in step 1
-size_t compute_namelength(char * array, size_t length) {
-  size_t name_length = 0;
-  for (size_t i = 0; i < length; i++) {
+//compute the length of first part before comma in this format:"   ,   "
+size_t compute_firstlen(char * array, size_t size) {
+  size_t first_length = 0;
+  for (size_t i = 0; i < size; i++) {
     if (array[i] != ',') {
-      name_length++;
+      first_length++;
     }
     if (array[i] == ',') {
       break;
     }
   }
-  return name_length;
+  return first_length;
 }
 
 country_t parseLine(char * line) {
@@ -51,10 +51,10 @@ country_t parseLine(char * line) {
   }
 
   line_length = strlen(line);
-  name_length = compute_namelength(line, line_length);
+  name_length = compute_firstlen(line, line_length);
   //check the size of the country name string
-  if (name_length == 0 || name_length > MAX_NAME_LEN) {
-    fprintf(stderr, "The name is empty or the length of name is too long");
+  if (name_length > MAX_NAME_LEN) {
+    fprintf(stderr, "The length of name is too long");
     exit(EXIT_FAILURE);
   }
 
