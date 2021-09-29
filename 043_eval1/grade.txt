@@ -1,6 +1,6 @@
-Grading at 09/29/2021:17:56:20.165072
-For commit ID 9ed1035addf8af3f8687b8436bef6107887cfe6a
-Grading at Wed Sep 29 13:56:00 EDT 2021
+Grading at 09/29/2021:18:13:47.008381
+For commit ID fa629ef485999b60af24ad1bb85873c6a6e30178
+Grading at Wed Sep 29 14:13:28 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -23,6 +23,9 @@ Test case printCountries step1_popul_charonly.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries step1_popul_none.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries step1_popul_negblk.csv
 Your program successfully indicated a failure case
 
 Compiling printRunningAvg
