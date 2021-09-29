@@ -1,35 +1,32 @@
-Grading at 09/28/2021:18:10:58.825152
-For commit ID b1b77df4468cb9446e73f840ba03adf6d6c65f91
-Grading at Tue Sep 28 14:10:44 EDT 2021
+Grading at 09/29/2021:16:17:26.030649
+For commit ID 39191807b380cf4740d6ce826d0758656d8a27d8
+Grading at Wed Sep 29 12:17:09 EDT 2021
 Running your test cases
 
 Compiling printCountries
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
 +-----------------------------------------------------------------------+
-Test case printCountries country1.csv
+Test case printCountries step1_commaonly.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries country4.csv
+Test case printCountries step1_empty.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries country5.csv
+Test case printCountries step1_name_long.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries step1_name_none.csv
 Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
-Test case printCountries country7.csv
+Test case printCountries step1_popul_charfirst.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries country9.csv
+Test case printCountries step1_popul_charonly.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printCountries country10.csv
+Test case printCountries step1_popul_none.csv
 Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries country11.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries country12.csv
-Our printCountries does not consider this an error case
 
 Compiling printRunningAvg
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -52,28 +49,37 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o pri
 Test case printCountries population.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country2.csv
+Test case printCountries step1_name_blk.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country3.csv
+Test case printCountries step1_name_char.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country6.csv
+Test case printCountries step1_name_digit.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country8.csv
+Test case printCountries step1_name_onlychar_right.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country13.csv
+Test case printCountries step1_popul_0.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country14.csv
+Test case printCountries step1_popul_00000.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country15.csv
+Test case printCountries step1_popul_00099.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries country16.csv
+Test case printCountries step1_popul_blkfirst.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries step1_popul_charback.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries step1_popul_neg.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries step1_popul_frac.csv
 Your file matched the expected output
 
 Compiling printRunningAvg
