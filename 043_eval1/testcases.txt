@@ -1,25 +1,27 @@
 #error
-printCountries country1.csv
-printCountries country4.csv
-printCountries country5.csv
-printCountries country7.csv
-printCountries country9.csv
-printCountries country10.csv
-printCountries country11.csv
-printCountries country12.csv
+printCountries step1_commaonly.csv
+printCountries step1_empty.csv
+printCountries step1_name_long.csv
+printCountries step1_name_none.csv
+printCountries step1_popul_charfirst.csv
+printCountries step1_popul_charonly.csv
+printCountries step1_popul_none.csv
 printRunningAvg inputAvg.csv
 printDailyMax tie.csv
 
 #success
 printCountries population.csv
-printCountries country2.csv
-printCountries country3.csv
-printCountries country6.csv
-printCountries country8.csv
-printCountries country13.csv
-printCountries country14.csv
-printCountries country15.csv
-printCountries country16.csv
+printCountries step1_name_blk.csv
+printCountries step1_name_char.csv
+printCountries step1_name_digit.csv
+printCountries step1_name_onlychar_right.csv
+printCountries step1_popul_0.csv
+printCountries step1_popul_00000.csv
+printCountries step1_popul_00099.csv
+printCountries step1_popul_blkfirst.csv
+printCountries step1_popul_charback.csv
+printCountries step1_popul_neg.csv
+printCountries step1_popul_frac.csv
 printRunningAvg population.csv daily_cases.csv
 printCumulative population.csv daily_cases.csv
 printDailyMax population.csv daily_cases.csv

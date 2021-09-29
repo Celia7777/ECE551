@@ -5,36 +5,32 @@
 #include <stdlib.h>
 #include <string.h>
 
-//use to check the population part is a pure number or not later
-//start and end point to the start and end bits of population
-void check_purenumber(char * start, char * end) {
-  if (start == end) {
-    fprintf(stderr, "The population format is wrong.");
-    exit(EXIT_FAILURE);
-  }
-  while (start != end) {
-    if (isdigit(*start) == 0) {
-      fprintf(stderr, "The population is not a pure number.");
-      exit(EXIT_FAILURE);
+//compute the length of country's name string in step 1
+size_t compute_namelength(char * array, size_t length) {
+  size_t name_length = 0;
+  for (size_t i = 0; i < length; i++) {
+    if (array[i] != ',') {
+      name_length++;
     }
-    start++;
+    if (array[i] == ',') {
+      break;
+    }
   }
+  return name_length;
 }
 
 country_t parseLine(char * line) {
   country_t ans;
   ans.name[0] = '\0';
   ans.population = 0;
-
-  char * comma_ptr;  //a pointer to the comma
-  //  char * newline_ptr;  //a pointer to the newline
-  size_t length;  //size of line
-  size_t name_length = 0;
-  //char *
-  //  popul_valid_num_end;  //point to the first element which is not valid number, in population part
+  char * comma_ptr;    //a pointer to the comma
+  char * popul_ptr;    //a pointer to the first of population
+  size_t line_length;  //size of line
+  size_t name_length;
+  char *
+      popul_valid_num_end;  //point to the first element which is not valid number, in population part
 
   uint64_t popul_num;
-
   //check if there is a line array or not
   if (line == NULL) {
     fprintf(stderr, "There is no line array.");
@@ -42,32 +38,23 @@ country_t parseLine(char * line) {
   }
 
   comma_ptr = strchr(line, ',');
-  // newline_ptr = strchr(line, '\n');
+  popul_ptr = comma_ptr + 1;
   // check if there is a comma or not
   if (comma_ptr == NULL) {
     fprintf(stderr, "The input has no comma.");
     exit(EXIT_FAILURE);
   }
   //check if the population if a pure number or not
-  //  check_purenumber(comma_ptr + 1, newline_ptr);
-  if (isdigit(*(comma_ptr + 1)) == 0) {
-    fprintf(stderr, "The first part is not number.");
+  if (!(isdigit(*popul_ptr) != 0 || *popul_ptr == ' ' || *popul_ptr == '-')) {
+    fprintf(stderr, "The first part of population is not an number.");
     exit(EXIT_FAILURE);
   }
-  //compute the length of the string of the country name
-  length = strlen(line);
-  for (size_t i = 0; i < length; i++) {
-    if (line[i] != ',') {
-      name_length++;
-    }
-    if (line[i] == ',') {
-      break;
-    }
-  }
 
+  line_length = strlen(line);
+  name_length = compute_namelength(line, line_length);
   //check the size of the country name string
-  if (name_length > MAX_NAME_LEN) {
-    fprintf(stderr, "The length of name is too long");
+  if (name_length == 0 || name_length > MAX_NAME_LEN) {
+    fprintf(stderr, "The name is empty or the length of name is too long");
     exit(EXIT_FAILURE);
   }
 
@@ -77,12 +64,8 @@ country_t parseLine(char * line) {
   }
   ans.name[name_length] = '\0';
 
-  //convert the string of population to 64 int
-  //comma_ptr+1 point to the first element of population string
-  //popul_valid_num_end point to the last element of valid population number part
-  //base 10, decimal
-  // popul_num = strtoll((comma_ptr + 1), &popul_valid_num_end, 10);
-  popul_num = atol(comma_ptr + 1);
+  //convert the string of population to 64 int, base 10
+  popul_num = strtoll(popul_ptr, &popul_valid_num_end, 10);
   ans.population = popul_num;
   return ans;
 }
