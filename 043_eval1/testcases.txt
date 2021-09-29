@@ -6,7 +6,6 @@ printCountries step1_popul_charfirst.csv
 printCountries step1_popul_charonly.csv
 printCountries step1_popul_none.csv
 printCountries step1_popul_negblk.csv
-printDailyMax tie.csv
 
 #success
 printCountries population.csv
@@ -29,3 +28,4 @@ printRunningAvg step3_popul0.csv daily_cases.csv
 printRunningAvg population.csv daily_cases.csv
 printCumulative population.csv daily_cases.csv
 printDailyMax population.csv daily_cases.csv
+printDailyMax population.csv tie.csv
