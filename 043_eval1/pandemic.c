@@ -166,10 +166,12 @@ void printCountryWithMax(country_t * countries,
     }
   }
   country_name = countries[max_index].name;
-  printf("%s has the most daily cases with %u\n", country_name, number_cases);
 
   //check if there is a tie situation
-  if (tie != 0) {
+  if (tie == 0) {
+    printf("%s has the most daily cases with %u\n", country_name, number_cases);
+  }
+  else {
     printf("There is a tie between at least two countries\n");
   }
 }
