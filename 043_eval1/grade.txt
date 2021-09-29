@@ -1,6 +1,6 @@
-Grading at 09/29/2021:18:37:53.004515
-For commit ID f44f6372a5498212c1a6626a025b3da0b0443f43
-Grading at Wed Sep 29 14:37:34 EDT 2021
+Grading at 09/29/2021:19:07:25.145454
+For commit ID b2081f670a33e271a9b6415196e08711a13346c4
+Grading at Wed Sep 29 15:07:06 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -32,11 +32,14 @@ Compiling printRunningAvg
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
 +-----------------------------------------------------------------------+
-Test case printRunningAvg step2_null.csv
-Your program successfully indicated a failure case
+Test case printRunningAvg population.csv step2_null.csv
+Our printRunningAvg does not consider this an error case
 +-----------------------------------------------------------------------+
-Test case printRunningAvg step2_lessthan7.csv
-Your program successfully indicated a failure case
+Test case printRunningAvg population.csv step2_lessthan7.csv
+Our printRunningAvg does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv step3_null.csv
+Our printRunningAvg does not consider this an error case
 
 Compiling printDailyMax
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -92,6 +95,9 @@ Compiling printRunningAvg
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
 +-----------------------------------------------------------------------+
+Test case printRunningAvg step3_popul0.csv daily_cases.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_cases.csv
 Your file matched the expected output
 
@@ -109,7 +115,7 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o prin
 Test case printDailyMax population.csv daily_cases.csv
 Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
