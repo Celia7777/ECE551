@@ -90,17 +90,17 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   if (n_days < 7) {
     return;
   }
+
   //compute the the seven-day running average
-  else {
-    for (size_t i = 0; i < 7; i++) {
-      first_7d_sum += data[i];
-    }
-    double current_sum = first_7d_sum;
-    avg[0] = first_7d_sum / 7;
-    for (size_t j = 7; j < n_days; j++) {
-      current_sum = current_sum - data[j - 7] + data[j];
-      avg[j - 6] = current_sum / 7;
-    }
+
+  for (size_t i = 0; i < 7; i++) {
+    first_7d_sum += data[i];
+  }
+  double current_sum = first_7d_sum;
+  avg[0] = first_7d_sum / 7;
+  for (size_t j = 7; j < n_days; j++) {
+    current_sum = current_sum - data[j - 7] + data[j];
+    avg[j - 6] = current_sum / 7;
   }
 }
 
