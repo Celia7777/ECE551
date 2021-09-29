@@ -9,6 +9,18 @@ printCountries step1_popul_negblk.csv
 
 #success
 printCountries population.csv
+printCountries step1_name_blk.csv
+printCountries step1_name_char.csv
+printCountries step1_name_digit.csv
+printCountries step1_name_onlychar_right.csv
+printCountries step1_name_none.csv
+printCountries step1_popul_0.csv
+printCountries step1_popul_00000.csv
+printCountries step1_popul_00099.csv
+printCountries step1_popul_blkfirst.csv
+printCountries step1_popul_charback.csv
+printCountries step1_popul_neg.csv
+printCountries step1_popul_frac.csv
 printRunningAvg population.csv step2_null.csv
 printRunningAvg population.csv step2_lessthan7.csv
 printRunningAvg population.csv step3_null.csv
