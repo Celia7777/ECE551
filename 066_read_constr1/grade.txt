@@ -1,7 +1,10 @@
-Grading at 10/14/2021:03:26:12.296662
-For commit ID b58361f7ce75f09e2108e4de35090253f2797002
-Grading at Wed Oct 13 23:26:12 EDT 2021
+Grading at 10/14/2021:03:28:23.579131
+For commit ID 17c5545b310dc99f2c3d54dbc95cd884972ab887
+Grading at Wed Oct 13 23:28:23 EDT 2021
 Attempting to compile:
-You do not have a Makefile
+g++ -o code -Wall -Werror -std=gnu++98 code.cpp
+Your Makefile produced a binary called 'code'
+Your file matched the expected output
+Your output matched what we expected
 
-Overall Grade: FAILED
+Overall Grade: PASSED
