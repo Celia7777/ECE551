@@ -1,0 +1,7 @@
+Grading at 10/14/2021:03:20:31.810299
+For commit ID 6a6e18169596fe7c7312658b849feab8a7a7478e
+Grading at Wed Oct 13 23:20:31 EDT 2021
+Attempting to compile:
+You do not have a Makefile
+
+Overall Grade: FAILED
