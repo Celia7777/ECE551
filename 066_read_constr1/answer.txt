@@ -1,8 +1,8 @@
 First loop
-Creating Myclass
-Creating Myclass
-Creating Myclass
-Creating Myclass
+Creating MyClass
+Creating MyClass
+Creating MyClass
+Creating MyClass
 Second loop
 Math resulted in a=4 b=4
 Math resulted in a=7 b=3
