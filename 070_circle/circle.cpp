@@ -12,15 +12,8 @@ double Circle::intersectionArea(const Circle & otherCircle) {
   double area_intersec;
   double dis_twocircl;  //distance between two centers
 
-  if (radius >= otherCircle.radius) {
-    bigradius = radius;
-    smlradius = otherCircle.radius;
-  }
-  else {
-    bigradius = otherCircle.radius;
-    smlradius = radius;
-  }
-
+  bigradius = fmax(radius, otherCircle.radius);
+  smlradius = fmin(radius, otherCircle.radius);
   dis_twocircl = center.distanceFrom(otherCircle.center);
 
   //the two circles don't have intersection
