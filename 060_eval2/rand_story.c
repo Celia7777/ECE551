@@ -189,7 +189,7 @@ catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * u
 //if option is 0,allow reuse; if it is 1, prevent//
 void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
   //check if the input has no "_"//
-  checkIfhasUnderscore(story);
+  //  checkIfhasUnderscore(story);
 
   //keep track of used words
   //record the previous used words in category_t
