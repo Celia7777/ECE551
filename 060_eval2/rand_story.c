@@ -63,7 +63,7 @@ char * extractCategory(char * front_unds, char * back_unds) {
   //copy xxx into a new string
   //don't forget to free the cat_cp
   cat_cp = strndup(front_unds + 1, len);
-  printf("extractword:%s\n", cat_cp);
+  //printf("extractword:%s\n", cat_cp);
   return cat_cp;
 }
 
@@ -84,20 +84,20 @@ const char * replaceWord(char * category, catarray_t * catg_word, category_t * u
   size_t checkcatg;
   checkcatg = checkIsincatarray(category, catg_word);
   checkinteger = checkIsvalidinteger(category, cat_len);
-  printf("check integer:%zu\n", checkinteger);
+  //printf("check integer:%zu\n", checkinteger);
   //if it is a valid integer of at least one
   //replace it with  the previous used word
   //counting backwards from the current word
   //what if n_words<integer, not enough used words,failure??????
   if (checkinteger >= 1 && usedw->n_words >= checkinteger) {
     replaceword = usedw->words[usedw->n_words - checkinteger];
-    printf("if it is a valid interger, replace :%s\n", replaceword);
+    //    printf("if it is a valid interger, replace :%s\n", replaceword);
     return replaceword;
   }
   //if cat_cp is in catarray_t, return a random choice
   else if (checkcatg == 1) {
     replaceword = chooseWord(category, catg_word);
-    printf("if it is a valid category, replace :%s\n", replaceword);
+    //printf("if it is a valid category, replace :%s\n", replaceword);
     return replaceword;
   }
   //if it is neither in catarray nor a valid integer
@@ -235,14 +235,14 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
         next_unds = checkNextUnderscore(ptr_recrd);
         catintemp = extractCategory(ptr_recrd, next_unds);
         rep_word = replaceWord(catintemp, catwd_pairs, prevUsedwd);
-        printf("replaced word:%s\n", rep_word);
+        //        printf("replaced word:%s\n", rep_word);
         //record the used replaced word into prevusedwd
         prevUsedwd->words = realloc(
             prevUsedwd->words, (prevUsedwd->n_words + 1) * sizeof(*prevUsedwd->words));
         //copy used word and save it into category_t
         //don't forget free its memory
         prevUsedwd->words[prevUsedwd->n_words] = strdup(rep_word);
-        printf("replace word copy:%s\n", prevUsedwd->words[prevUsedwd->n_words]);
+        //        printf("replace word copy:%s\n", prevUsedwd->words[prevUsedwd->n_words]);
         prevUsedwd->n_words++;
         //connect replaceword to linecopy
         repw_len = strlen(rep_word);
@@ -264,9 +264,11 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
     story->lineinp[i] = linecopy;
     linecopy = NULL;
     numcopy = 0;
-    printf("test line:%s", story->lineinp[i]);
+    //printf("test line:%s", story->lineinp[i]);
   }
-  freecatarray_t(catwd_pairs);
+  if (catwd_pairs != NULL) {
+    freecatarray_t(catwd_pairs);
+  }
   freecategory_twords(prevUsedwd);
 }
 

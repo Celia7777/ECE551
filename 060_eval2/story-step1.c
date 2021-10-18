@@ -32,6 +32,5 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   freeline_t(parsestory);
-
   return EXIT_SUCCESS;
 }

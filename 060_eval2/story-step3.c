@@ -44,7 +44,6 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   freeline_t(parsestory);
-  freecatarray_t(parseword);
 
   return EXIT_SUCCESS;
 }
