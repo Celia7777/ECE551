@@ -13,7 +13,7 @@ IntMatrix::IntMatrix(const IntMatrix & rhs) :
     numColumns(rhs.numColumns) {
   rows = new IntArray *[numRows];
   for (int i = 0; i < numRows; i++) {
-    rows[i] = new IntArray(numColumns);
+    rows[i] = new IntArray(rhs[i]);
   }
 }
 IntMatrix::~IntMatrix() {
