@@ -32,8 +32,8 @@ IntMatrix & IntMatrix::operator=(const IntMatrix & rhs) {
     numRows = rhs.numRows;
     numColumns = rhs.numColumns;
     rows = new IntArray *[rhs.numRows];
-    for (int i = 0; i < numRows; i++) {
-      rows[i] = new IntArray(numColumns);
+    for (int i = 0; i < rhs.numRows; i++) {
+      rows[i] = new IntArray(rhs[i]);
     }
   }
   return *this;
