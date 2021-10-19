@@ -1,6 +1,6 @@
-Grading at 10/19/2021:20:06:02.259084
-For commit ID fc4c6483ca73798fe97a4277346d968ff53b7d55
-Grading at Tue Oct 19 16:05:47 EDT 2021
+Grading at 10/19/2021:20:11:26.473961
+For commit ID 49bf79fa7f87630048c5d22a3f12282bacf8cc93
+Grading at Tue Oct 19 16:11:06 EDT 2021
 Attempting to compile:
 rm -f *.o  *~ intMatrixTest
 #################################################
@@ -20,7 +20,9 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase4:
-valgrind reported memory errors
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase5:
 Your output is correct
@@ -28,7 +30,9 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase6:
-valgrind reported memory errors
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase7:
 Your output is correct
@@ -36,7 +40,9 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase8:
-valgrind reported memory errors
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase9:
 Your output is correct
@@ -44,6 +50,8 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase10:
-valgrind reported memory errors
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
-Overall Grade: D
+Overall Grade: A
