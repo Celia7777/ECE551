@@ -1,28 +1,58 @@
-Grading at 10/20/2021:18:41:30.143180
-For commit ID 6d897a031489fc7361fd6fbdcdea3612311e6f8e
-Grading at Wed Oct 20 14:41:26 EDT 2021
+Grading at 10/20/2021:19:09:33.144675
+For commit ID f0c2aca86b433fb853de9c070bf3dd426bc03a2c
+Grading at Wed Oct 20 15:09:22 EDT 2021
 Running your test cases
 
-Compiling story-step2
+Compiling story-step3
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
-gcc -o story-step2 story-step2.o rand_story.o provided.o
-rm story-step2.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
 +-----------------------------------------------------------------------+
-Test case 1 (error): story-step2 
+Test case 1 (error): story-step3 
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 2 (error): story-step2 words.txt story.txt
+Test case 2 (error): story-step3 words.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 3 (error): story-step2 words_nocol.txt
+Test case 3 (error): story-step3 words.txt story_bigint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 4 (error): story-step2 story.txt
+Test case 4 (error): story-step3 words.txt story_invalidint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (success): story-step2 words.txt
+Test case 5 (error): story-step3 words.txt story_noprebfint.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 6 (error): story-step3 words.txt story_notincat.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 7 (error): story-step3 words.txt story_nowords.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 8 (error): story-step3 words.txt story_wrongunds.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 9 (error): story-step3 words_nocol.txt story.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 10 (success): story-step3 words.txt story2.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 11 (success): story-step3 words.txt story.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 12 (success): story-step3 words.txt story_nounds.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 13 (success): story-step3 words.txt story_morecats.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 14 (success): story-step3 words.txt story_notenough.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 15 (success): story-step3 word_rep.txt story_rep.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases
