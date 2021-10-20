@@ -1,6 +1,6 @@
-Grading at 10/20/2021:17:08:35.358251
-For commit ID 2102e3b9e305c8694dbf34427707ef7de40e1ec4
-Grading at Wed Oct 20 13:08:16 EDT 2021
+Grading at 10/20/2021:17:10:25.860691
+For commit ID f52efc453c6400f618a31e62d650783974f9b702
+Grading at Wed Oct 20 13:10:06 EDT 2021
 Running your test cases
 
 Compiling story-step4
@@ -67,32 +67,33 @@ Your program successfully indicated a failure case
 Test case 19 (error): story-step4 -n words_nocol.txt story.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 20 (error): story-step4 -n word_rep.txt story_rep.txt
-Our story-step4 does not consider this an error case
-+-----------------------------------------------------------------------+
-Test case 21 (success): story-step4 words.txt story2.txt
+Test case 20 (success): story-step4 words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 22 (success): story-step4 words.txt story.txt
+Test case 21 (success): story-step4 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 23 (success): story-step4 words.txt story_nounds.txt
+Test case 22 (success): story-step4 words.txt story_nounds.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 24 (success): story-step4 -n words.txt story2.txt
+Test case 23 (success): story-step4 -n words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 25 (success): story-step4 -n words.txt story.txt
+Test case 24 (success): story-step4 -n words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 26 (success): story-step4 -n words.txt story_nounds.txt
+Test case 25 (success): story-step4 -n words.txt story_nounds.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 27 (success): story-step4 words.txt story_morecats.txt
+Test case 26 (success): story-step4 words.txt story_morecats.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 28 (success): story-step4 words.txt story_notenough.txt
+Test case 27 (success): story-step4 words.txt story_notenough.txt
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 28 (success): story-step4 -n word_rep.txt story_rep.txt
+Line_1_did_not_match
+Your file did not match the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging
