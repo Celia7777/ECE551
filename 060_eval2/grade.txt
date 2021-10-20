@@ -1,6 +1,6 @@
-Grading at 10/20/2021:05:43:20.606167
-For commit ID 6d72ca6ae0e4a6170a5706b13aad170af226e6ce
-Grading at Wed Oct 20 01:43:11 EDT 2021
+Grading at 10/20/2021:05:57:08.253203
+For commit ID 86a0e05dce8f8dddb7472baaa74dc04504912dcd
+Grading at Wed Oct 20 01:56:58 EDT 2021
 Running your test cases
 
 Compiling story-step3
@@ -22,20 +22,14 @@ Your program successfully indicated a failure case
 Test case story-step3 words.txt story_invalidint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step3 words.txt story_morecats.txt
-Our story-step3 does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case story-step3 words.txt story_noprebfint.txt
 Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case story-step3 words.txt story_notenough.txt
-Our story-step3 does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story_notincat.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story_nowords.txt
-Valgrind reported memory errors
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story_wrongunds.txt
 Your program successfully indicated a failure case
@@ -51,8 +45,14 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story_nounds.txt
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_morecats.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_notenough.txt
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
