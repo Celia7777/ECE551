@@ -143,6 +143,9 @@ catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * u
   //keep in mind that c is the new catarray_t this function
   //needs to return, use c just to shorten the sentences
   catarray_t * c;
+  //use flag to check when there are two same categories
+  //to guarantee we can use these same words
+  int flag = 0;
   //no influence on name and n, just copy(deep copy)
   //initialize words in ready to realloc later
   c = malloc(sizeof(*c));
@@ -157,11 +160,14 @@ catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * u
   for (size_t i = 0; i < oldcat->n; i++) {
     if (strcmp(name, oldcat->arr[i].name) == 0) {
       for (size_t j = 0; j < oldcat->arr[i].n_words; j++) {
-        if (strcmp(usedword, oldcat->arr[i].words[j]) != 0) {
+        if (strcmp(usedword, oldcat->arr[i].words[j]) != 0 || flag == 1) {
           c->arr[i].words = realloc(c->arr[i].words,
                                     (c->arr[i].n_words + 1) * sizeof(*c->arr[i].words));
           c->arr[i].words[c->arr[i].n_words] = strdup(oldcat->arr[i].words[j]);
           c->arr[i].n_words++;
+        }
+        else if (flag == 0) {
+          flag = 1;
         }
       }
     }
@@ -173,7 +179,7 @@ catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * u
       }
     }
   }
-
+  //  printWords(c);
   return c;
 }
 

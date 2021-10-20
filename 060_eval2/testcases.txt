@@ -1,8 +1,18 @@
 #error
-story-step2
-story-step2 words.txt story.txt
-story-step2 words_nocol.txt
-story-step2 story.txt
+story-step3
+story-step3 words.txt
+story-step3 words.txt story_bigint.txt
+story-step3 words.txt story_invalidint.txt
+story-step3 words.txt story_noprebfint.txt 
+story-step3 words.txt story_notincat.txt
+story-step3 words.txt story_nowords.txt
+story-step3 words.txt story_wrongunds.txt
+story-step3 words_nocol.txt story.txt
 
 #success
-story-step2 words.txt
+story-step3 words.txt story2.txt
+story-step3 words.txt story.txt
+story-step3 words.txt story_nounds.txt
+story-step3 words.txt story_morecats.txt
+story-step3 words.txt story_notenough.txt
+story-step3 word_rep.txt story_rep.txt
