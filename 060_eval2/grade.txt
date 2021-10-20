@@ -1,37 +1,28 @@
-Grading at 10/20/2021:18:33:17.730230
-For commit ID 36ad2344817c1bc28cf9c9ddddcdec64bd7014a7
-Grading at Wed Oct 20 14:33:11 EDT 2021
+Grading at 10/20/2021:18:41:30.143180
+For commit ID 6d897a031489fc7361fd6fbdcdea3612311e6f8e
+Grading at Wed Oct 20 14:41:26 EDT 2021
 Running your test cases
 
-Compiling story-step1
+Compiling story-step2
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
-gcc -o story-step1 story-step1.o rand_story.o provided.o
-rm story-step1.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
+gcc -o story-step2 story-step2.o rand_story.o provided.o
+rm story-step2.o
 +-----------------------------------------------------------------------+
-Test case 1 (error): story-step1 story_wrongunds.txt
+Test case 1 (error): story-step2 
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 2 (error): story-step1 
+Test case 2 (error): story-step2 words.txt story.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 3 (error): story-step1 words.txt story.txt
+Test case 3 (error): story-step2 words_nocol.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 4 (success): story-step1 story_nounds.txt
-Your file matched the expected output
+Test case 4 (error): story-step2 story.txt
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (success): story-step1 story.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 6 (success): story-step1 words.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 7 (success): story-step1 story2.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 8 (success): story-step1 story_morecats.txt
+Test case 5 (success): story-step2 words.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases
