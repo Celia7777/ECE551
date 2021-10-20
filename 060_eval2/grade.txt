@@ -1,31 +1,58 @@
-Grading at 10/20/2021:05:34:15.548495
-For commit ID 5c44aef5cc4d199e581922450f77cd6248958991
-Grading at Wed Oct 20 01:34:11 EDT 2021
+Grading at 10/20/2021:05:43:20.606167
+For commit ID 6d72ca6ae0e4a6170a5706b13aad170af226e6ce
+Grading at Wed Oct 20 01:43:11 EDT 2021
 Running your test cases
 
-Compiling story-step2
+Compiling story-step3
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
-gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
-gcc -o story-step2 story-step2.o rand_story.o provided.o
-rm story-step2.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
 +-----------------------------------------------------------------------+
-Test case story-step2 
+Test case story-step3 
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step2 words.txt story.txt
+Test case story-step3 words.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step2 words_nocol.txt
+Test case story-step3 words.txt story_bigint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step2 story.txt
+Test case story-step3 words.txt story_invalidint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step2 words.txt
+Test case story-step3 words.txt story_morecats.txt
+Our story-step3 does not consider this an error case
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_noprebfint.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_notenough.txt
+Our story-step3 does not consider this an error case
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_notincat.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_nowords.txt
+Valgrind reported memory errors
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_wrongunds.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step3 words_nocol.txt story.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story2.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words.txt story_nounds.txt
 Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
