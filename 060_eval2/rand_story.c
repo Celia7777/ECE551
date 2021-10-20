@@ -179,6 +179,7 @@ catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * u
       }
     }
   }
+  //  printWords(c);
   return c;
 }
 

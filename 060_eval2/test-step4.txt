@@ -33,3 +33,7 @@ story-step4 words.txt story_notenough.txt
 story-step4 -n word_rep.txt story_rep.txt
 story-step4 word_rep.txt story_rep.txt
 story-step4 word_rep.txt story_repcheck.txt
+story-step4 -n word_oprep.txt story_oprep.txt
+story-step4 -n word_option.txt story_option.txt
+story-step4 word_option.txt story_option.txt
+story-step4 word_option.txt story_option.txt 
