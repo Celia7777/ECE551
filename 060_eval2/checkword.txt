@@ -1,2 +1,15 @@
 animal:dragon
-animal dog
+animal:dog
+animal:walrus
+animal:horse
+place:house
+place:chapel
+place:World
+place:Duke
+people:Anna
+people:Jack
+objective:beautiful
+objective:peaceful
+objective:meaningful
+objective:lovely
+objective:cute

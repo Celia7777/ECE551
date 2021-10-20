@@ -19,7 +19,8 @@ int main(int argc, char ** argv) {
       option = 1;
     }
     else {
-      option = 0;
+      fprintf(stderr, "Only accept -n option");
+      return EXIT_FAILURE;
     }
     fword = fopen(argv[2], "r");
     fstory = fopen(argv[3], "r");

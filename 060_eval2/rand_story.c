@@ -105,6 +105,10 @@ const char * replaceWord(char * category, catarray_t * catg_word, category_t * u
     fprintf(stderr, "the category is neither in catarray nor a valid integer.\n ");
     exit(EXIT_FAILURE);
   }
+  else if (usedw->n_words < checkinteger) {
+    fprintf(stderr, "the integer is too big, not enough words at the front.\n ");
+    exit(EXIT_FAILURE);
+  }
   else {
     return NULL;
   }
@@ -177,6 +181,10 @@ catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * u
       }
     }
   }
+  //  if (c->arr[0].words == NULL) {
+  // c->arr[0].n_words = c->arr[0].n_words - 1;
+  //}
+  //  printWords(c);
   return c;
 }
 
@@ -252,6 +260,12 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
         ptr_recrd = next_unds + 1;
         numcopy = numcopy + repw_len;
         if (option == 1) {
+          //      if (catwd_pairs->arr[0].n_words == 0) {
+          // fprintf(
+          //    stderr,
+          //    "do not have enough words, since previous words cannot be used again.\n");
+          //exit(EXIT_FAILURE);
+          //}
           catwd_pairs = processReuseOption(catwd_pairs, catintemp, rep_word);
           freecatarray_t(free_ptr);
           free_ptr = catwd_pairs;

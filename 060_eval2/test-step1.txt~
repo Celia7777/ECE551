@@ -1,7 +1,6 @@
 #error
 story-step1 story_wrongunds.txt
-story-step1
-story-step1 words.txt story.txt
+
 
 #success
 story-step1 story_nounds.txt
@@ -9,3 +8,4 @@ story-step1 story.txt
 story-step1 words.txt
 story-step1 story2.txt
 story-step1 story_morecats.txt
+
