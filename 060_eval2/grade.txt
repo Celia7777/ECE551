@@ -1,6 +1,6 @@
-Grading at 10/20/2021:06:00:34.914775
-For commit ID 6e06399be6abf09f5d5edc4464bad578a0ccb8ed
-Grading at Wed Oct 20 02:00:17 EDT 2021
+Grading at 10/20/2021:06:04:00.817792
+For commit ID ce0734214f06f4dbba26f29c65147e544159951e
+Grading at Wed Oct 20 02:03:41 EDT 2021
 Running your test cases
 
 Compiling story-step4
@@ -22,14 +22,8 @@ Your program successfully indicated a failure case
 Test case story-step4 words.txt story_invalidint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step4 words.txt story_morecats.txt
-Our story-step4 does not consider this an error case
-+-----------------------------------------------------------------------+
 Test case story-step4 words.txt story_noprebfint.txt
 Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case story-step4 words.txt story_notenough.txt
-Our story-step4 does not consider this an error case
 +-----------------------------------------------------------------------+
 Test case story-step4 words.txt story_notincat.txt
 Your program successfully indicated a failure case
@@ -90,8 +84,14 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step4 -n words.txt story_nounds.txt
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step4 words.txt story_morecats.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step4 words.txt story_notenough.txt
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
