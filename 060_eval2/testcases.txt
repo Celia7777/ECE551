@@ -19,6 +19,7 @@ story-step4 -n words.txt story_nowords.txt
 story-step4 -n words.txt story_wrongunds.txt
 story-step4 -n words_nocol.txt story.txt
 story-step4 -n word_rep.txt story_repcheck.txt
+story-step4 word_rep.txt story_repcheck.txt
 
 #success
 story-step4 words.txt story2.txt
