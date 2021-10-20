@@ -15,6 +15,7 @@ int main(int argc, char ** argv) {
   }
 
   else if (argc == 4) {
+    //if we type "-n" at the command line reusing words is not allowed
     if (strcmp(argv[1], "-n") == 0) {
       option = 1;
     }
@@ -26,7 +27,7 @@ int main(int argc, char ** argv) {
     fstory = fopen(argv[3], "r");
   }
   else {
-    fprintf(stderr, "Usage: input story file");
+    fprintf(stderr, "Usage: input story file and word file");
     return EXIT_FAILURE;
   }
 
@@ -43,7 +44,8 @@ int main(int argc, char ** argv) {
   catarray_t * parseword;
   parsestory = parseStory(fstory);
   parseword = parseCategoryWords(fword);
-
+  //add the parameter option, if it is 1, prevent using reused words
+  //if it is 0, allow to use reused words
   createOutputStory(parsestory, parseword, option);
   for (size_t i = 0; i < parsestory->num_line; i++) {
     printf("%s", parsestory->lineinp[i]);
@@ -57,6 +59,6 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   freeline_t(parsestory);
-  //  freecatarray_t(parseword);
+
   return EXIT_SUCCESS;
 }

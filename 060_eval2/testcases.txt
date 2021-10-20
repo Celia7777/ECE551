@@ -1,35 +1,19 @@
 #error
-story-step4
-story-step4 words.txt
-story-step4 words.txt story_bigint.txt
-story-step4 words.txt story_invalidint.txt
-story-step4 words.txt story_noprebfint.txt 
-story-step4 words.txt story_notincat.txt
-story-step4 words.txt story_nowords.txt
-story-step4 words.txt story_wrongunds.txt
-story-step4 words_nocol.txt story.txt
-story-step4 -m words.txt story.txt
-story-step4 -n words.txt story_bigint.txt
-story-step4 -n words.txt story_invalidint.txt
-story-step4 -n words.txt story_morecats.txt
-story-step4 -n words.txt story_noprebfint.txt 
-story-step4 -n words.txt story_notenough.txt
-story-step4 -n words.txt story_notincat.txt
-story-step4 -n words.txt story_nowords.txt
-story-step4 -n words.txt story_wrongunds.txt
-story-step4 -n words_nocol.txt story.txt
-story-step4 -n word_rep.txt story_repcheck.txt
+story-step3
+story-step3 words.txt
+story-step3 words.txt story_bigint.txt
+story-step3 words.txt story_invalidint.txt
+story-step3 words.txt story_noprebfint.txt 
+story-step3 words.txt story_notincat.txt
+story-step3 words.txt story_nowords.txt
+story-step3 words.txt story_wrongunds.txt
+story-step3 words_nocol.txt story.txt
 
 
 #success
-story-step4 words.txt story2.txt
-story-step4 words.txt story.txt
-story-step4 words.txt story_nounds.txt
-story-step4 -n words.txt story2.txt
-story-step4 -n words.txt story.txt
-story-step4 -n words.txt story_nounds.txt
-story-step4 words.txt story_morecats.txt
-story-step4 words.txt story_notenough.txt
-story-step4 -n word_rep.txt story_rep.txt
-story-step4 word_rep.txt story_rep.txt
-story-step4 word_rep.txt story_repcheck.txt
+story-step3 words.txt story2.txt
+story-step3 words.txt story.txt
+story-step3 words.txt story_nounds.txt
+story-step3 words.txt story_morecats.txt
+story-step3 words.txt story_notenough.txt
+story-step3 word_rep.txt story_rep.txt
