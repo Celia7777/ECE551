@@ -14,16 +14,12 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   line_t * parsestory;
+  //obtain the line_t which contains each line of the input story
+  //and how many lines of this story
   parsestory = parseStory(f);
-  //  check(parsestory);
-  //  char * str = "_animal_";
-  //char * start = strchr(str, '_');
-  //char * next = strchr(start + 1, '_');
-  //const char * replace;
-  //replace = replaceWord(start, next);
-  //printf("%s\n", replace);
-
+  //replace each xxx in _xxx_ with the replace word produced by chooseword
   createOutputStory(parsestory, NULL, 0);
+  //print the output story
   for (size_t i = 0; i < parsestory->num_line; i++) {
     printf("%s", parsestory->lineinp[i]);
   }
