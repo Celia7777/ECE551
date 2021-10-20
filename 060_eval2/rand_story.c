@@ -120,6 +120,13 @@ const char * replaceWord(char * category, catarray_t * catg_word, category_t * u
 //if not, exit with error info//
 char * checkNextUnderscore(char * current_unds) {
   char * next_unds = strchr(current_unds + 1, '_');
+  size_t len;
+  len = next_unds - current_unds - 1;
+  if (len == 0) {
+    fprintf(stderr, "it no words between _ _\n");
+    exit(EXIT_FAILURE);
+  }
+
   if (next_unds == NULL) {
     fprintf(stderr, "the _ does not followed by another _\n");
     exit(EXIT_FAILURE);
