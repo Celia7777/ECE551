@@ -30,3 +30,4 @@ story-step4 -n words.txt story_nounds.txt
 story-step4 words.txt story_morecats.txt
 story-step4 words.txt story_notenough.txt
 story-step4 -n word_rep.txt story_rep.txt
+story-step4 word_rep.txt story_rep.txt
