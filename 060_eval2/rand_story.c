@@ -3,10 +3,10 @@
 #include <ctype.h>
 #include <string.h>
 
-//To parse the input template story//
+/*To parse the input template story*/
 //given the file stream f, return a line_t//
-//which contains the array of lines of this story//
-//and how many lines//
+//which contains the array of pointers, each points
+// to a line of this story, and how many lines//
 line_t * parseStory(FILE * f) {
   line_t * parseinp;
   parseinp = malloc(sizeof(*parseinp));
@@ -25,11 +25,12 @@ line_t * parseStory(FILE * f) {
   return parseinp;
 }
 
+/*To check the valid category template*/
 //to check if the category in "_category_" in the
 //catarray_t(the output after parsing the word.txt) or not
 size_t checkIsincatarray(char * category, catarray_t * sample) {
-  //if category is in catarray_t, if it is, return 1
-  //if not, return 0
+  //if category is in catarray_t or not
+  //if it is, return 1; if not, return 0
   for (size_t i = 0; i < sample->n; i++) {
     if (strcmp(category, sample->arr[i].name) == 0) {
       return 1;
@@ -38,9 +39,10 @@ size_t checkIsincatarray(char * category, catarray_t * sample) {
   return 0;
 }
 
+/*To check the valid integer*/
 //given an extracted category from _category_
-//check if it is a valid integer, if it is
-//return the exac numeric value eg "_2_" is integer 2
+//check if it is a valid integer, if it is,
+//return the exac numeric value eg "_2_", will return integer 2
 //if it is not, return 0
 size_t checkIsvalidinteger(char * category, size_t size) {
   size_t checkans;
@@ -54,19 +56,24 @@ size_t checkIsvalidinteger(char * category, size_t size) {
   return checkans;
 }
 
-//given two pointers points to the start and next "_"//
+/*To extract the category between to "_" */
+//given two pointers points to the start"_" and next "_"//
 //at the string "_xxx_", return xxx//
 char * extractCategory(char * front_unds, char * back_unds) {
   size_t len = back_unds - front_unds - 1;  //the length of xxx
-  //what if len==0????? "__"
+  //check if there is no words between __, just __
+  if (len == 0) {
+    fprintf(stderr, "there is no words between _ _\n");
+    exit(EXIT_FAILURE);
+  }
   char * cat_cp;
   //copy xxx into a new string
-  //don't forget to free the cat_cp
+  //don't forget to free the cat_cp later
   cat_cp = strndup(front_unds + 1, len);
-  //printf("extractword:%s\n", cat_cp);
   return cat_cp;
 }
 
+/*To get replace word from chooseword */
 //given the string "xxx" in "_xxx_"//
 //return the replaceword at xxx//
 const char * replaceWord(char * category, catarray_t * catg_word, category_t * usedw) {
@@ -84,20 +91,18 @@ const char * replaceWord(char * category, catarray_t * catg_word, category_t * u
   size_t checkcatg;
   checkcatg = checkIsincatarray(category, catg_word);
   checkinteger = checkIsvalidinteger(category, cat_len);
-  //printf("check integer:%zu\n", checkinteger);
+
   //if it is a valid integer of at least one
-  //replace it with  the previous used word
+  //replace it with the previous used word
   //counting backwards from the current word
-  //what if n_words<integer, not enough used words,failure??????
+  //what if n_words<integer, not enough used words,exit failure
   if (checkinteger >= 1 && usedw->n_words >= checkinteger) {
     replaceword = usedw->words[usedw->n_words - checkinteger];
-    //    printf("if it is a valid interger, replace :%s\n", replaceword);
     return replaceword;
   }
   //if cat_cp is in catarray_t, return a random choice
   else if (checkcatg == 1) {
     replaceword = chooseWord(category, catg_word);
-    //printf("if it is a valid category, replace :%s\n", replaceword);
     return replaceword;
   }
   //if it is neither in catarray nor a valid integer
@@ -105,6 +110,7 @@ const char * replaceWord(char * category, catarray_t * catg_word, category_t * u
     fprintf(stderr, "the category is neither in catarray nor a valid integer.\n ");
     exit(EXIT_FAILURE);
   }
+  //if the integer is too large, there is not enough words
   else if (usedw->n_words < checkinteger) {
     fprintf(stderr, "the integer is too big, not enough words at the front.\n ");
     exit(EXIT_FAILURE);
@@ -114,18 +120,12 @@ const char * replaceWord(char * category, catarray_t * catg_word, category_t * u
   }
 }
 
-//if I have one _ in a line//
-//check if we have another at the back//
+/*To check the next underscore */
+//if I have one _ in a line, check if we have another at the back//
 //if have, return a pointer to next _//
-//if not, exit with error info//
+//if not, exit with error messages//
 char * checkNextUnderscore(char * current_unds) {
   char * next_unds = strchr(current_unds + 1, '_');
-  size_t len;
-  len = next_unds - current_unds - 1;
-  if (len == 0) {
-    fprintf(stderr, "it no words between _ _\n");
-    exit(EXIT_FAILURE);
-  }
 
   if (next_unds == NULL) {
     fprintf(stderr, "the _ does not followed by another _\n");
@@ -136,24 +136,9 @@ char * checkNextUnderscore(char * current_unds) {
   }
 }
 
-//given a line_t story//
-//check if it contains _ or not//
-//if not, exit with error info//
-void checkIfhasUnderscore(line_t * story) {
-  size_t count_null = 0;
-  char * unds_checkall;
-  for (size_t i = 0; i < story->num_line; i++) {
-    unds_checkall = strchr(story->lineinp[i], '_');
-    if (unds_checkall == NULL) {
-      count_null++;
-    }
-  }
-  if (count_null == story->num_line) {
-    fprintf(stderr, "input story has no _\n");
-    exit(EXIT_FAILURE);
-  }
-}
-
+/*To construct a catarray_t for not reused option */
+//if -n option is applied, change the old catarray_t
+//remove the used word from the old catarray_t to get the new one
 catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * usedword) {
   //keep in mind that c is the new catarray_t this function
   //needs to return, use c just to shorten the sentences
@@ -188,24 +173,16 @@ catarray_t * processReuseOption(catarray_t * oldcat, char * name, const char * u
       }
     }
   }
-  //  if (c->arr[0].words == NULL) {
-  // c->arr[0].n_words = c->arr[0].n_words - 1;
-  //}
-  //  printWords(c);
+
   return c;
 }
 
-//To create the output story based on the input template//
-//given a input line_t, modify its array of lines//
-//modify _xxx_ with the corresponding replace words//
-//from the word-category catarray_t
-//eg. _animal_ into dog//
+/*To create the output story based on the input template*/
+//given a input line_t, modify its array of pointers to each line//
+//modify _xxx_ with the corresponding replace words, eg. _animal_ into dog//
 //add the option to prevent reuse word//
-//if option is 0,allow reuse; if it is 1, prevent//
+//if option is 0,allow reuse; if it is 1, prevent reuse//
 void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
-  //check if the input has no "_"//
-  //  checkIfhasUnderscore(story);
-
   //keep track of used words
   //record the previous used words in category_t
   category_t * prevUsedwd;
@@ -214,24 +191,19 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
   prevUsedwd->words = NULL;
   prevUsedwd->name = NULL;  //no need to use name
 
-  //modify the input line_t//
-  //to copy the string of lines into linecopy
-  //and record its size
   char * linecopy = NULL;
   size_t numcopy = 0;
-  //to mark the movement of the ptr at the lines
-  //and mark the next _
   char * ptr_recrd;
   char * next_unds;
   //the extracted category in input template
   char * catintemp;
-  //to get the replace word corresponding to a category
-  //and get its length
   const char * rep_word;
   size_t repw_len;
-
+  //use free_ptr to help free the old catarray_t
   catarray_t * free_ptr = catwd_pairs;
 
+  //copy the characters not between _ _
+  //and concatenate the replace word
   for (size_t i = 0; i < story->num_line; i++) {
     if (linecopy == NULL) {
       linecopy = malloc(sizeof(*linecopy));
@@ -247,17 +219,18 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
         numcopy++;
       }
       else {
+        //check and get the next underscore
         next_unds = checkNextUnderscore(ptr_recrd);
+        //get the category in _category_
         catintemp = extractCategory(ptr_recrd, next_unds);
         rep_word = replaceWord(catintemp, catwd_pairs, prevUsedwd);
-        //        printf("replaced word:%s\n", rep_word);
+
         //record the used replaced word into prevusedwd
         prevUsedwd->words = realloc(
             prevUsedwd->words, (prevUsedwd->n_words + 1) * sizeof(*prevUsedwd->words));
         //copy used word and save it into category_t
-        //don't forget free its memory
+        //don't forget free its memory later
         prevUsedwd->words[prevUsedwd->n_words] = strdup(rep_word);
-        //        printf("replace word copy:%s\n", prevUsedwd->words[prevUsedwd->n_words]);
         prevUsedwd->n_words++;
         //connect replaceword to linecopy
         repw_len = strlen(rep_word);
@@ -267,13 +240,8 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
         ptr_recrd = next_unds + 1;
         numcopy = numcopy + repw_len;
         if (option == 1) {
-          //      if (catwd_pairs->arr[0].n_words == 0) {
-          // fprintf(
-          //    stderr,
-          //    "do not have enough words, since previous words cannot be used again.\n");
-          //exit(EXIT_FAILURE);
-          //}
           catwd_pairs = processReuseOption(catwd_pairs, catintemp, rep_word);
+          //free the old catarray
           freecatarray_t(free_ptr);
           free_ptr = catwd_pairs;
         }
@@ -285,7 +253,6 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
     story->lineinp[i] = linecopy;
     linecopy = NULL;
     numcopy = 0;
-    //printf("test line:%s", story->lineinp[i]);
   }
   if (catwd_pairs != NULL) {
     freecatarray_t(catwd_pairs);
@@ -293,6 +260,7 @@ void createOutputStory(line_t * story, catarray_t * catwd_pairs, int option) {
   freecategory_twords(prevUsedwd);
 }
 
+/*To free the line_t */
 //input a line_t, free its memory//
 void freeline_t(line_t * input) {
   for (size_t i = 0; i < input->num_line; i++) {
@@ -302,6 +270,7 @@ void freeline_t(line_t * input) {
   free(input);
 }
 
+/*To free the words in category_t */
 //input a category_t, free its memory//
 void freecategory_twords(category_t * input) {
   for (size_t i = 0; i < input->n_words; i++) {
@@ -311,9 +280,9 @@ void freecategory_twords(category_t * input) {
   free(input);
 }
 
+/*To extract the category(name) and words */
 //given a string: category:word//
 //save the "category" and "word" into cw_pair//
-/*test cases added later*/
 cw_pair * extractCategoryWords(char * inputline) {
   cw_pair * cat_word;
   cat_word = malloc(sizeof(*cat_word));
@@ -331,7 +300,6 @@ cw_pair * extractCategoryWords(char * inputline) {
   //compute the length of category and word
   cat_len = colon_ptr - inputline;
   word_len = newline_ptr - colon_ptr - 1;
-  //  printf("catlen:%zu, wordlen:%zu\n", cat_len, word_len);
   //copy category and word
   cat_word->category = malloc((cat_len + 1) * sizeof(*cat_word->category));
   cat_word->word = malloc((word_len + 1) * sizeof(*cat_word->word));
@@ -343,22 +311,21 @@ cw_pair * extractCategoryWords(char * inputline) {
   return cat_word;
 }
 
-//to parse the word.txt(contains category and words)//
-//given a category-word file//
+/*to parse the word.txt(contains category and words)*/
+//given a category-word(eg.words.txt) file//
 //generate the corresponding catarray_t//
 catarray_t * parseCategoryWords(FILE * f) {
-  //keep in mind that c is the output
-  //when I parse the word.txt
+  //keep in mind that c is the output, used to just shorten the sentences
   //the type of c is catarray_t
   catarray_t * c;
   c = malloc(sizeof(*c));
-  //  c->arr = malloc(sizeof(*c->arr));
   c->arr = NULL;
   c->n = 0;
   cw_pair * catwd;
   char * line = NULL;
   size_t sz;
   while (getline(&line, &sz, f) >= 0) {
+    //to get one cw_pair
     catwd = extractCategoryWords(line);
     for (size_t i = 0; i < c->n; i++) {
       if (strcmp(catwd->category, c->arr[i].name) == 0) {
@@ -386,6 +353,8 @@ catarray_t * parseCategoryWords(FILE * f) {
   return c;
 }
 
+/* To free the catarray_t*/
+//given a catarray_t, free its memory
 void freecatarray_t(catarray_t * c) {
   for (size_t i = 0; i < c->n; i++) {
     for (size_t j = 0; j < c->arr[i].n_words; j++) {

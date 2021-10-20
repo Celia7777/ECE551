@@ -3,9 +3,7 @@ story-step4
 story-step4 words.txt
 story-step4 words.txt story_bigint.txt
 story-step4 words.txt story_invalidint.txt
-story-step4 words.txt story_morecats.txt
 story-step4 words.txt story_noprebfint.txt 
-story-step4 words.txt story_notenough.txt
 story-step4 words.txt story_notincat.txt
 story-step4 words.txt story_nowords.txt
 story-step4 words.txt story_wrongunds.txt
@@ -29,3 +27,6 @@ story-step4 words.txt story_nounds.txt
 story-step4 -n words.txt story2.txt
 story-step4 -n words.txt story.txt
 story-step4 -n words.txt story_nounds.txt
+story-step4 words.txt story_morecats.txt
+story-step4 words.txt story_notenough.txt
+story-step4 -n word_rep.txt story_rep.txt
