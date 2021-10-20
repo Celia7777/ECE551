@@ -8,8 +8,6 @@ story-step3 words.txt story_noprebfint.txt
 story-step3 words.txt story_notenough.txt
 story-step3 words.txt story_notincat.txt
 story-step3 words.txt story_nowords.txt
-story-step3 words.txt story_wrongunds.txt
-story-step3 words_nocol.txt story.txt
 
 #success
 story-step3 words.txt story2.txt
