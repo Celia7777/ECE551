@@ -8,7 +8,7 @@ template<typename T>
 void printElements(T & container) {
   typename T::iterator it = container.begin();
   while (it != container.end()) {
-    std::cout << *it << "\n";
+    std::cout << *it << std::endl;
     ++it;
   }
 }
