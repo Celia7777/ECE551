@@ -35,7 +35,7 @@ int main(int argc, char ** argv) {
       std::vector<std::string> Vector;
       while (!f.eof()) {
         std::string String;
-        std::getline(std::cin, String);
+        std::getline(f, String);
         Vector.push_back(String);
       }
       std::sort(Vector.begin(), Vector.end());
