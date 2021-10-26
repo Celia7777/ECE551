@@ -43,6 +43,7 @@ class PlusExpression : public Expression {
 };
 
 class MinusExpression : public Expression {
+ private:
   Expression * left;
   Expression * right;
 
@@ -60,15 +61,16 @@ class MinusExpression : public Expression {
 };
 
 class TimesExpression : public Expression {
+ private:
   Expression * left;
   Expression * right;
 
  public:
   TimesExpression(Expression * lhs, Expression * rhs) : left(lhs), right(rhs) {}
   virtual std::string toString() const {
-    std::stringstream time;
-    time << "(" << left->toString() << " * " << right->toString() << ")";
-    return time.str();
+    std::stringstream times;
+    times << "(" << left->toString() << " * " << right->toString() << ")";
+    return times.str();
   }
   virtual ~TimesExpression() {
     delete left;
@@ -77,6 +79,7 @@ class TimesExpression : public Expression {
 };
 
 class DivExpression : public Expression {
+ private:
   Expression * left;
   Expression * right;
 
@@ -84,7 +87,7 @@ class DivExpression : public Expression {
   DivExpression(Expression * lhs, Expression * rhs) : left(lhs), right(rhs) {}
   virtual std::string toString() const {
     std::stringstream div;
-    div << "(" << left->toString() << " * " << right->toString() << ")";
+    div << "(" << left->toString() << " / " << right->toString() << ")";
     return div.str();
   }
   virtual ~DivExpression() {
