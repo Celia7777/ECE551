@@ -1,121 +1,249 @@
-Grading at 10/20/2021:20:22:43.670484
+Grading at 11/08/2021:15:50:13.742713
 For commit ID f08790f5c134110000b54ee2e8d0bb65b0598143
-Grading at Wed Oct 20 16:22:19 EDT 2021
-Running your test cases
+Grading at Mon Nov  8 10:49:44 EST 2021
 
-Compiling story-step4
+=========================================================================
+Step 1
+
+Checking that story-step1 compiles
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
+gcc -o story-step1 story-step1.o rand_story.o provided.o
+rm story-step1.o
++-----------------------------------------------------------------------+
+Test case 1
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 2
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 3
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 4
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 5
+Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 6
+Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 7
+Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 8
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 9
+Line_1_did_not_match
+Your file did not match the expected output
+                                                         [0/2]
++-----------------------------------------------------------------------+
+Test case 10
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 11
+Your file matched the expected output
+                                                         [2/2]
+
+Step 1 total                                             [23.0/25]
+
+=========================================================================
+Step 2
+
+Checking that story-step2 compiles
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
+gcc -o story-step2 story-step2.o rand_story.o provided.o
+rm story-step2.o
++-----------------------------------------------------------------------+
+Test case 12
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 13
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 14
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 15
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 16
+Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 17
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.4/2]
++-----------------------------------------------------------------------+
+Test case 18
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 19
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.4/2]
++-----------------------------------------------------------------------+
+Test case 20
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 21
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.4/2]
++-----------------------------------------------------------------------+
+Test case 22
+Your file matched the expected output
+                                                         [1/1]
+
+Step 2 total                                             [18.2/20]
+
+=========================================================================
+Step 3
+
+Checking that story-step3 compiles
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
++-----------------------------------------------------------------------+
+Test case 23
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 24
+Your program successfully indicated a failure case
+                                                         [0.5/0.5]
++-----------------------------------------------------------------------+
+Test case 25
+Your program successfully indicated a failure case
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 26
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 27
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 28
+Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 29
+Your file matched the expected output
+                                                         [4/4]
++-----------------------------------------------------------------------+
+Test case 30
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [2.8/4]
++-----------------------------------------------------------------------+
+Test case 31
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.4/2]
++-----------------------------------------------------------------------+
+Test case 32
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.4/2]
++-----------------------------------------------------------------------+
+Test case 33
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.4/2]
+
+Step 3 total                                             [22.0/25]
+
+=========================================================================
+Step 4
+
+Checking that story-step4 compiles
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
 gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
 gcc -o story-step4 story-step4.o rand_story.o provided.o
 rm story-step4.o
 +-----------------------------------------------------------------------+
-Test case 1 (error): story-step4 
+Test case 34
 Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 2 (error): story-step4 words.txt
+Test case 35
 Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 3 (error): story-step4 words.txt story_bigint.txt
+Test case 36
 Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 4 (error): story-step4 words.txt story_invalidint.txt
+Test case 37
 Your program successfully indicated a failure case
+                                                         [0.5/0.5]
 +-----------------------------------------------------------------------+
-Test case 5 (error): story-step4 words.txt story_noprebfint.txt
+Test case 38
 Your program successfully indicated a failure case
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 6 (error): story-step4 words.txt story_notincat.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 7 (error): story-step4 words.txt story_nowords.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 8 (error): story-step4 words.txt story_wrongunds.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 9 (error): story-step4 words_nocol.txt story.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 10 (error): story-step4 -m words.txt story.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 11 (error): story-step4 -n words.txt story_bigint.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 12 (error): story-step4 -n words.txt story_invalidint.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 13 (error): story-step4 -n words.txt story_morecats.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 14 (error): story-step4 -n words.txt story_noprebfint.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 15 (error): story-step4 -n words.txt story_notenough.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 16 (error): story-step4 -n words.txt story_notincat.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 17 (error): story-step4 -n words.txt story_nowords.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 18 (error): story-step4 -n words.txt story_wrongunds.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 19 (error): story-step4 -n words_nocol.txt story.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 20 (error): story-step4 -n word_rep.txt story_repcheck.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 21 (success): story-step4 words.txt story2.txt
+Test case 39
 Your file matched the expected output
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 22 (success): story-step4 words.txt story.txt
+Test case 40
 Your file matched the expected output
+                                                         [2/2]
 +-----------------------------------------------------------------------+
-Test case 23 (success): story-step4 words.txt story_nounds.txt
+Test case 41
 Your file matched the expected output
+                                                         [4/4]
 +-----------------------------------------------------------------------+
-Test case 24 (success): story-step4 -n words.txt story2.txt
+Test case 42
 Your file matched the expected output
+                                                         [4/4]
 +-----------------------------------------------------------------------+
-Test case 25 (success): story-step4 -n words.txt story.txt
+Test case 43
+Valgrind reported memory errors
 Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 26 (success): story-step4 -n words.txt story_nounds.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 27 (success): story-step4 words.txt story_morecats.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 28 (success): story-step4 words.txt story_notenough.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 29 (success): story-step4 -n word_rep.txt story_rep.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 30 (success): story-step4 word_rep.txt story_rep.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 31 (success): story-step4 word_rep.txt story_repcheck.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 32 (success): story-step4 -n word_oprep.txt story_oprep.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 33 (success): story-step4 -n word_option.txt story_option.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 34 (success): story-step4 word_option.txt story_option.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 35 (success): story-step4 word_option.txt story_option.txt
-Your file matched the expected output
+                                                         [2.8/4]
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+Step 4 total                                             [18.8/20]
 
-Overall Grade: NO GRADE YET
+=========================================================================
+Code quality
+
+Abstration:    Excellent
+Naming:        Excellent
+Formatting:    Excellent
+Documentation: Excellent
+Comments from your grader:
+Excellent job! I like your meaningful variable names and helpful comments. You 
+also did great job on abstraction, since all functions are not so long. The 
+code is clean and formative. Keep moving!
+Quality total                                            [10/10]
+
+=========================================================================
+
+Overall Grade: 92
