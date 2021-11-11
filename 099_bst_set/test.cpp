@@ -16,8 +16,8 @@ int main() {
   set.add(7);
   set.add(11);
   set.Printset();
-  bool ans1 = set.lookup(17);
-  bool ans2 = set.lookup(111);
+  bool ans1 = set.contains(17);
+  bool ans2 = set.contains(111);
   set.remove(10);
   std::cout << "ans1 should be true and =" << ans1 << "\n";
   std::cout << "ans2 should be false and =" << ans2 << "\n";
@@ -25,7 +25,7 @@ int main() {
   set.Printset();
 
   BstSet<int> setcp(set);
-  setcp.inOrderPrint();
+  setcp.Printset();
 
   return EXIT_SUCCESS;
 }

@@ -67,7 +67,7 @@ class BstSet : public Set<K> {
     *current = new Node(key);
   }
 
-  virtual bool lookup(const K & key) const {
+  virtual bool contains(const K & key) const {
     Node * current = root;
     while (current != NULL) {
       if (current->key == key) {
@@ -123,7 +123,7 @@ class BstSet : public Set<K> {
   void printer(Node * current) {
     if (current != NULL) {
       printer(current->left);
-      std::cout << current->key << " : " << current->value << "\n";
+      std::cout << "key:" << current->key << "\n";
       printer(current->right);
     }
   }
