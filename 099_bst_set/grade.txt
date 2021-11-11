@@ -1,74 +1,26 @@
-Grading at 11/11/2021:18:00:28.103900
-For commit ID e152dc25372faa328ba40567c78e32555458e6df
-Grading at Thu Nov 11 13:00:27 EST 2021
+Grading at 11/11/2021:18:06:32.059995
+For commit ID e2d22fd13ac5db16a7c2e33683e1af3a04190a55
+Grading at Thu Nov 11 13:06:28 EST 2021
 -----------------------------------------------
 testcase 1 : Testing with BstSet<int>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<int>’
-   BSTSetTy * bmt = new BSTSetTy();
-                                 ^
-In file included from 90-tester.cpp:1:0:
-bstset.h:9:7: note:   because the following virtual functions are pure within ‘BstSet<int>’:
- class BstSet : public Set<K> {
-       ^~~~~~
-In file included from bstset.h:6:0,
-                 from 90-tester.cpp:1:
-set.h:9:16: note: 	bool Set<T>::contains(const T&) const [with T = int]
-   virtual bool contains(const T& key) const = 0;
-                ^~~~~~~~
-90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<int>’
-   BSTSetTy * m2 = new BSTSetTy(*bmt);
-                                    ^
-90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<int>’
-   m = bmt = new BSTSetTy();
-                          ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 2 : Testing with BstSet<std::string>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
-   BSTSetTy * bmt = new BSTSetTy();
-                                 ^
-In file included from 90-tester.cpp:1:0:
-bstset.h:9:7: note:   because the following virtual functions are pure within ‘BstSet<std::__cxx11::basic_string<char> >’:
- class BstSet : public Set<K> {
-       ^~~~~~
-In file included from bstset.h:6:0,
-                 from 90-tester.cpp:1:
-set.h:9:16: note: 	bool Set<T>::contains(const T&) const [with T = std::__cxx11::basic_string<char>]
-   virtual bool contains(const T& key) const = 0;
-                ^~~~~~~~
-90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
-   BSTSetTy * m2 = new BSTSetTy(*bmt);
-                                    ^
-90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<std::__cxx11::basic_string<char> >’
-   m = bmt = new BSTSetTy();
-                          ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 3 : Testing with BstSet<(a custom class we wrote)>
 ...compiling...
-90-tester.cpp: In function ‘int main()’:
-90-tester.cpp:70:33: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
-   BSTSetTy * bmt = new BSTSetTy();
-                                 ^
-In file included from 90-tester.cpp:1:0:
-bstset.h:9:7: note:   because the following virtual functions are pure within ‘BstSet<Tester>’:
- class BstSet : public Set<K> {
-       ^~~~~~
-In file included from bstset.h:6:0,
-                 from 90-tester.cpp:1:
-set.h:9:16: note: 	bool Set<T>::contains(const T&) const [with T = Tester]
-   virtual bool contains(const T& key) const = 0;
-                ^~~~~~~~
-90-tester.cpp:92:36: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
-   BSTSetTy * m2 = new BSTSetTy(*bmt);
-                                    ^
-90-tester.cpp:151:26: error: invalid new-expression of abstract class type ‘BstSet<Tester>’
-   m = bmt = new BSTSetTy();
-                          ^
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
