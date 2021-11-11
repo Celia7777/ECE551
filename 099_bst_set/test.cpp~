@@ -1,0 +1,28 @@
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+
+#include "bstset.h"
+
+int main() {
+  BstSet<int> set;
+  set.add(77);
+  set.add(17);
+  set.add(57);
+  set.add(0);
+  set.add(27);
+  set.add(-1);
+  set.add(32);
+  set.add(7);
+  set.add(11);
+  set.Printset();
+  int ans1 = set.lookup(17);
+  int ans2 = set.lookup(11);
+  set.remove(10);
+  std::cout << "ans1 should be 2 and =" << ans1 << "\n";
+  std::cout << "ans2 should be 9 and =" << ans2 << "\n";
+
+  BstMap<int, int> mapnew = map;
+  mapnew.Printmap();
+  return EXIT_SUCCESS;
+}
