@@ -22,8 +22,8 @@ class Page {
     std::string::size_type position;
     size_t line_num = 0;
     bool isfound = false;
-    while (!f.eof()) {
-      std::getline(f, line);
+    //while (!f.eof()) {
+    while (std::getline(f, line)) {
       position = line.find("#");
       //  std::cout << position << "\n";
       if (line_num == 0 && position == 0) {
@@ -83,8 +83,8 @@ class Page {
     line_num = findPound(f);
     //std::cout << "# at line: " << line_num << "\n";
     f.seekg(0, f.beg);
-    while (!f.eof()) {
-      std::getline(f, line);
+    //while (!f.eof()) {
+    while (std::getline(f, line)) {
       //std::cout << line << "-\n";
 
       if (line_index < line_num) {
@@ -124,7 +124,7 @@ class Page {
       for (size_t i = 0; i < navigation.size(); i++) {
         colonindx = navigation[i].find(":");
         choiceinfo = navigation[i].substr(colonindx + 1);
-        std::cout << " " << i + 1 << ". " << choiceinfo << "\n";
+        std::cout << " " << i + 1 << ". " << choiceinfo << std::endl;
       }
     }
   }
