@@ -1,6 +1,6 @@
-Grading at 11/13/2021:01:53:16.890104
-For commit ID 2851035d3bc429c5711673a5e1ab27def23dbc9a
-Grading at Fri Nov 12 20:53:06 EST 2021
+Grading at 11/13/2021:01:59:39.210235
+For commit ID b24df4c0770dfc178d72e4804e695de912520a3a
+Grading at Fri Nov 12 20:59:28 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -12,55 +12,35 @@ rm cyoa-step1.o
 Compiled for step 1
 +-----------------------------------------------------------------------+
 Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
-20d19
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 2 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page2.txt
-20d19
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 3 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page3.txt
-20d19
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 4 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page4.txt
-24d23
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 5 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page5.txt
-16d15
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 6 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page1.txt
-11d10
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
-6d5
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
-4d3
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
-4d3
-< 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 10 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page5.txt
-7d6
-< 
-Your file did not match the expected output
-Step 1: Failed test cases as above
+Your file matched the expected output
+Step 1: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step2
 rm -f *~ cyoa-step1  cyoa-step1.o page.o 
