@@ -1,6 +1,6 @@
-Grading at 11/15/2021:03:49:46.250725
-For commit ID 293b0b85c95e0ad87513a51f0a63e0d3a377dac2
-Grading at Sun Nov 14 22:49:30 EST 2021
+Grading at 11/15/2021:04:14:17.069635
+For commit ID 7676079d7a5a4930a92ad909f5695e046b99d6e0
+Grading at Sun Nov 14 23:14:00 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -58,68 +58,23 @@ Input to story is
 
 +-----------------------------------------------------------------------+
 Test case 11 (success): cyoa-step2 /usr/local/ece551/cyoa/story1 < pregrader_input.txt
-Your file matched the expected output
+25d24
+< move page1
+50d48
+< move page4
+71d68
+< move page13
+Your file did not match the expected output
 Input to story is
 3
 2
 
 +-----------------------------------------------------------------------+
 Test case 12 (success): cyoa-step2 /usr/local/ece551/cyoa/story1 < pregrader_input.txt
-53,54c53,71
-< After thinking about it for a bit, you decide that Denevieve is the better
-< choice. You go to her house and explain your quest. 
----
-> After thinking about it for a bit, you decide to go to Grew for help. When
-> you explain your quest, and that you have a magic toaster, Grew gets an
-> idea. 
-> 
-> "Well, dragons really love to eat, so lets just give them a better option
-> than the animals in the area!" Grew exclaims. He goes on to explain how you
-> will create the best all-you-can-eat brunch buffet ever. Grew will arrange
-> for berries, smoked salmon, pastries, and you will provide literally
-> all-you-can-eat toast with the magic toaster. 
-> 
-> You swing by Troll Foods, the local grocery store (yes, run by real
-> trolls--but they are nice trolls) and pick up the supplies: 10 kg of smoked
-> salmon, 20 kg of mixed berries, and 100 pastries.
-> 
-> Upon arriving at the dragon's cave, you lay out the buffet and start making
-> toast. The dragon is so happy with the food, and thrilled that he can make
-> all the toast he wants, that he agrees to stop eating people's farm
-> animals, on one condition: you and Grew have to come back each week and
-> have brunch with him.
-56,57c73
-< "Why don't we make some mimosas to go with the toast, and take them to the
-< dragon? That would surely placate him," she suggests. 
----
-> You all live happily ever after.
-59,82c75
-< You agree that mimosas are a great idea. Of course, it seems like you
-< should probably make quite a lot of mimosas for a dragon. The two of you
-< set off to the local grocery store, Troll Foods (yes, run by real
-< trolls--but they are nice) and acquire supplies. You decide on 20 liters of
-< orange juice and 20 liters of sparkling wine.
-< 
-< You take the supplies back to your house and start making mimosas. As you
-< do this, you remember the most important thing you learned in Denevieve's
-< class: testing is important. The first mimosa is great, but you remember
-< that one test case is not enough. After 10 mimosas worth of test cases, you
-< are very sure that they are good, but also that you are really drunk. 
-< 
-< You take your remaining mimosas to the dragon's cave and call out to him 
-< 
-< "Hey dagron. I've gotss some drinkss and toasht for you."
-< 
-< The dragon slithers out of his cave intrigued by your offer. As you go to
-< make toast, you realize you are too drunk to operate your magic toaster. 
-< 
-< The dragon eats you instead, while sipping on a mimosa.
-< 
-< You have been eaten by a dragon.
-< 
-< Sorry, you have lost. Better luck next time!
----
-> Congratulations! You have won. Hooray!
+25d24
+< move page3
+54d52
+< move page11
 Your file did not match the expected output
 Input to story is
 1
@@ -129,13 +84,23 @@ Input to story is
 
 +-----------------------------------------------------------------------+
 Test case 13 (success): cyoa-step2 /usr/local/ece551/cyoa/story2 < pregrader_input.txt
-Your file matched the expected output
+16d15
+< move page1
+26d24
+< move page5
+36d33
+< move page7
+47d43
+< move page10
+Your file did not match the expected output
 Input to story is
 3
 
 +-----------------------------------------------------------------------+
 Test case 14 (success): cyoa-step2 /usr/local/ece551/cyoa/story2 < pregrader_input.txt
-Your file matched the expected output
+16d15
+< move page3
+Your file did not match the expected output
 Step 2: Failed test cases as above
 
 Compiling cyoa-step3
