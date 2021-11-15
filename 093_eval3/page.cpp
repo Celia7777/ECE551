@@ -117,7 +117,7 @@ class Page {
           std::cerr << "the integer needs to greater than 0\n";
           exit(EXIT_FAILURE);
         }
-        std::cout << "integer" << integer << std::endl;
+        //        std::cout << "integer" << integer << std::endl;
         return integer;
         //tell if it is an integer later
       }
