@@ -87,6 +87,7 @@ class Page {
     std::string::size_type colonpos;
     std::string::size_type sz;
     int integer;
+
     colonpos = s.find(":");
     //if the choice is WIN or CLOSE
     if (s.compare("WIN") == 0 || s.compare("LOSE") == 0) {
@@ -109,10 +110,9 @@ class Page {
             std::cerr << "the part before colon is not invalid integer\n";
             return false;
           }
-          integer = std::stoi(intstr, &sz);
-          pagechoices.push_back(integer);
-          //std::cout<<"int choice:"<<pagechoices[]
         }
+        integer = std::stoi(intstr, &sz);
+        pagechoices.push_back(integer);
 
         //std::cout << "integer\n";
         return true;
@@ -141,6 +141,9 @@ class Page {
           std::cerr << "invalid navigation part\n";
           exit(EXIT_FAILURE);
         }
+        // for (size_t i = 0; i < pagechoices.size(); i++) {
+        //std::cout << "int choice" << pagechoices[i] << std::endl;
+        //}
         navigation.push_back(line);
       }
 

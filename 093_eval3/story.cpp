@@ -95,16 +95,16 @@ class Story {
           break;
         }
       }
-      movepage = story[storypg].getChoices()[integer - 1];
-      //      std::cout << "move page" << movepage << std::endl;
-      story[movepage - 1].printStory();
+      movepage = story[storypg].getChoices()[integer - 1] - 1;
+      std::cout << "move page" << movepage << std::endl;
+      story[movepage].printStory();
       //for (size_t j = 0; j < story[i].getNavsize(); j++) {
       //check if WIN or LOSE page
       //if (story[i].getNavigation()[j].compare("WIN") == 0 ||
       //  story[i].getNavigation()[j].compare("LOSE") == 0) {
       //  exit(EXIT_SUCCESS);
       //}
-      storypg = movepage - 1;
+      storypg = movepage;
     }
   }
 };
