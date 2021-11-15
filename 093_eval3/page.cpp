@@ -179,7 +179,7 @@ class Page {
   //the page class is already created and the navigation
   //part has already checked valid
   bool verifyPage(int pagenum, int & win, int & lose, std::vector<int> & intvec) {
-    std::cout << "page:" << pagenum << std::endl;
+    //    std::cout << "page:" << pagenum << std::endl;
     //int winnum = 0;
     //int losenum = 0;
     std::string::size_type colonpos;

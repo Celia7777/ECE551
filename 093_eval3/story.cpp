@@ -45,7 +45,7 @@ class Story {
         break;  //???
       }
       page.pushStory(f);
-      page.printStory();
+      //      page.printStory();
       story.push_back(page);
 
       pagenum++;
@@ -68,7 +68,7 @@ class Story {
   size_t getsize() { return story.size(); }
   std::vector<Page> getstory() { return story; }
 
-  void createStory(int pagenum) {
+  void createStory() {
     int integer;
     int storypg = 0;
     int movepage;
@@ -96,7 +96,7 @@ class Story {
         }
       }
       movepage = story[storypg].getChoices()[integer - 1];
-      std::cout << "move page" << movepage << std::endl;
+      //      std::cout << "move page" << movepage << std::endl;
       story[movepage - 1].printStory();
       //for (size_t j = 0; j < story[i].getNavsize(); j++) {
       //check if WIN or LOSE page

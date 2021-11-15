@@ -48,7 +48,7 @@ int main(int argc, char ** argv) {
       exit(EXIT_FAILURE);
     }
   }
-  story.createStory(pagenum);
+  story.createStory();
   //std::cout << verify << std::endl;
   return EXIT_SUCCESS;
 }
