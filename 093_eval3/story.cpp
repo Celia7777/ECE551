@@ -88,23 +88,24 @@ class Story {
             continue;
           }
           if (integer <= 0 || integer > (int)story[storypg].getNavsize()) {
-            std::cerr << "Please input an integer between 0 and "
+            std::cerr << "Please input an integer between 1 and "
                       << story[storypg].getNavsize() << std::endl;
             continue;
           }
           break;
         }
       }
-      movepage = story[storypg].getChoices()[integer - 1] - 1;
-      std::cout << "move page" << movepage << std::endl;
-      story[movepage].printStory();
+
+      movepage = story[storypg].getChoices()[integer - 1];
+      //      std::cout << "move page" << movepage << std::endl;
+      story[movepage - 1].printStory();
       //for (size_t j = 0; j < story[i].getNavsize(); j++) {
       //check if WIN or LOSE page
       //if (story[i].getNavigation()[j].compare("WIN") == 0 ||
       //  story[i].getNavigation()[j].compare("LOSE") == 0) {
       //  exit(EXIT_SUCCESS);
       //}
-      storypg = movepage;
+      storypg = movepage - 1;
     }
   }
 };

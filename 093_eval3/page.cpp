@@ -82,7 +82,7 @@ class Page {
   //to check the navigation part (before #)
   //check if it is WIN, LOSE or "integer:text"
   //if it is, return true; if not, return false
-  bool checkNavigation(std::string & s) {
+  int checkNavigation(std::string & s) {
     std::string intstr;
     std::string::size_type colonpos;
     std::string::size_type sz;
@@ -92,7 +92,7 @@ class Page {
     //if the choice is WIN or CLOSE
     if (s.compare("WIN") == 0 || s.compare("LOSE") == 0) {
       //      std::cout << "win lose\n";
-      return true;
+      return 0;
     }
     else {
       //if the choice does not have colon,
@@ -100,7 +100,7 @@ class Page {
       if (colonpos == s.npos || colonpos == 0) {
         std::cerr << "no colon or at the colon is at the first, thus no integer part\n";
         //std::cout << colonpos << "\n";
-        return false;  //应该是return，还是exit
+        exit(EXIT_FAILURE);  //应该是return，还是exit
       }
       //check if the integer part is valid or not
       else {
@@ -108,14 +108,17 @@ class Page {
         for (size_t i = 0; i < colonpos; i++) {
           if (std::isdigit(intstr[i]) == 0) {
             std::cerr << "the part before colon is not invalid integer\n";
-            return false;
+            exit(EXIT_FAILURE);
           }
         }
         integer = std::stoi(intstr, &sz);
-        pagechoices.push_back(integer);
-
-        //std::cout << "integer\n";
-        return true;
+        //pagechoices.push_back(integer);
+        if (integer <= 0) {
+          std::cerr << "the integer needs to greater than 0\n";
+          exit(EXIT_FAILURE);
+        }
+        std::cout << "integer" << integer << std::endl;
+        return integer;
         //tell if it is an integer later
       }
     }
@@ -128,22 +131,24 @@ class Page {
     std::string line;
     size_t line_num;
     size_t line_index = 0;
-    bool checknav = false;
+    int checknav;
     line_num = findPound(f);
-    //std::cout << "# at line: " << line_num << "\n";
+    //    std::cout << "# at line: " << line_num << "\n";
     //rewind the file stream pointer to the beginning
     f.seekg(0, f.beg);
     while (std::getline(f, line)) {
       //std::cout << line << "-\n";
       if (line_index < line_num) {
         checknav = checkNavigation(line);
-        if (checknav == false) {
-          std::cerr << "invalid navigation part\n";
-          exit(EXIT_FAILURE);
-        }
-        // for (size_t i = 0; i < pagechoices.size(); i++) {
-        //std::cout << "int choice" << pagechoices[i] << std::endl;
+        //  std::cout << "check nav" << checknav << std::endl;
+        //if (checknav == false) {
+        //std::cerr << "invalid navigation part\n";
+        //exit(EXIT_FAILURE);
         //}
+        if (checknav > 0) {
+          pagechoices.push_back(checknav);
+        }
+
         navigation.push_back(line);
       }
 
@@ -152,6 +157,10 @@ class Page {
       }
       line_index++;
     }
+    //std::cout << "int size " << pagechoices.size() << std::endl;
+    //for (size_t i = 0; i < pagechoices.size(); i++) {
+    //std::cout << "int in class " << pagechoices[i] << std::endl;
+    //}
   }
 
   //print one page of the story
