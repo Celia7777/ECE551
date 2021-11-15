@@ -59,11 +59,11 @@ class Story {
     return pagenum - 1;
   }
 
-  void printStory() {
-    for (size_t i = 0; i < story.size(); i++) {
-      story[i].printStory();
-    }
-  }
+  //void printStory() {
+  //for (size_t i = 0; i < story.size(); i++) {
+  //  story[i].printStory();
+  //}
+  //}
 
   size_t getsize() { return story.size(); }
   std::vector<Page> getstory() { return story; }
