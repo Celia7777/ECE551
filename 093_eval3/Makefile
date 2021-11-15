@@ -1,8 +1,8 @@
 CFLAGS=-std=gnu++98 -pedantic -Wall -Werror -ggdb3
-PROGS=cyoa-step1 
-OBJS=$(patsubst %,%.o,$(PROGS)) page.o 
+PROGS=cyoa-step1 cyoa-step2 
+OBJS=$(patsubst %,%.o,$(PROGS)) page.o story.o
 all: $(PROGS)
-cyoa-step%: cyoa-step%.o page.o 
+cyoa-step%: cyoa-step%.o page.o story.o 
 	g++ -o $@ $^
 %.o: %.c
 	g++ $(CFLAGS) -c $<
@@ -12,4 +12,5 @@ clean:
 	rm -f *~ $(PROGS) $(OBJS)
 
 page.o: page.cpp
+story.o: story.cpp
 

@@ -1,5 +1,5 @@
-apple
-bar
-oop
-whihi#
+12::apple
+1:bar
+2:oop
+#
 dxghsgh
