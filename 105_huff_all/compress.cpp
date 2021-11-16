@@ -77,7 +77,6 @@ int main(int argc, char ** argv) {
   tree->buildMap(empty, theMap);
   delete tree;
   writeCompressedOutput(argv[1], argv[2], theMap);
-  delete tree;
 
   return EXIT_SUCCESS;
 }
