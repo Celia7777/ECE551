@@ -1,6 +1,6 @@
-Grading at 11/21/2021:00:48:45.662867
-For commit ID 5bf3bf51f290e94a79b19252af25b4df63ecac0e
-Grading at Sat Nov 20 19:48:25 EST 2021
+Grading at 11/21/2021:00:50:56.274090
+For commit ID 8f9b514d75d77784d9985a9f528e4e9e2b6d3cc4
+Grading at Sat Nov 20 19:50:35 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -92,67 +92,11 @@ g++ -o cyoa-step3 cyoa-step3.o page.o story.o
 rm cyoa-step3.o
 +-----------------------------------------------------------------------+
 Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
-1,14c1,14
-< Page 1: 0
-< Page 2: 1
-< Page 3: 1
-< Page 4: 1
-< Page 5: 2
-< Page 6: 2
-< Page 7: 2
-< Page 8: 2
-< Page 9: 2
-< Page 10: 3
-< Page 11: 2
-< Page 12: 2
-< Page 13: 3
-< Page 14: 3
----
-> Page 1:0
-> Page 2:1
-> Page 3:1
-> Page 4:1
-> Page 5:2
-> Page 6:2
-> Page 7:2
-> Page 8:2
-> Page 9:2
-> Page 10:3
-> Page 11:2
-> Page 12:2
-> Page 13:3
-> Page 14:3
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 16 (success): cyoa-step3 /usr/local/ece551/cyoa/story2
-1,12c1,12
-< Page 1: 0
-< Page 2: 1
-< Page 3: 1
-< Page 4: 1
-< Page 5: 2
-< Page 6: 2
-< Page 7: 3
-< Page 8: 3
-< Page 9: 5
-< Page 10: 4
-< Page 11: 4
-< Page 12: 4
----
-> Page 1:0
-> Page 2:1
-> Page 3:1
-> Page 4:1
-> Page 5:2
-> Page 6:2
-> Page 7:3
-> Page 8:3
-> Page 9:5
-> Page 10:4
-> Page 11:4
-> Page 12:4
-Your file did not match the expected output
-Step 3: Failed test cases as above
+Your file matched the expected output
+Step 3: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step4
 rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3  cyoa-step1.o cyoa-step2.o cyoa-step3.o page.o story.o
