@@ -110,38 +110,5 @@ class Story {
     }
   }
 
-  void findDepth() {
-    std::queue<Page> queue;
-    Page current;
-    // push the page 1 into queue, the start page
-    story[0].getvisited() = true;
-    story[0].getdist() = 0;
-    queue.push(story[0]);
-
-    while (!queue.empty()) {
-      current = queue.front();
-      queue.pop();
-      for (size_t i = 0; i < current.getChoices().size(); i++) {
-        if (!story[current.getChoices()[i] - 1].getvisited()) {
-          story[current.getChoices()[i] - 1].getvisited() = true;
-          story[current.getChoices()[i] - 1].getdist() = current.getdist() + 1;
-          queue.push(story[current.getChoices()[i] - 1]);
-        }
-      }
-    }
-  }
-
-  void printDepth() {
-    for (size_t i = 0; i < story.size(); i++) {
-      if (story[i].getdist() == -1) {
-        continue;
-      }
-      std::cout << "Page " << i + 1 << ": " << story[i].getdist() << std::endl;
-    }
-    for (size_t i = 0; i < story.size(); i++) {
-      if (story[i].getdist() == -1) {
-        std::cout << "Page " << i + 1 << " is not reachable." << std::endl;
-      }
-    }
-  }
+  std::vector<int> findDepth() { std::queue<int> queue; }
 };

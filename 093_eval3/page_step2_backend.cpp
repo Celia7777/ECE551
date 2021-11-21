@@ -12,13 +12,8 @@ class Page {
   std::vector<std::string> navigation;
   std::vector<std::string> text;
   std::vector<int> pagechoices;
-  bool visited;
-  int dist;
 
  public:
-  // default constructor
-  Page() : visited(false), dist(-1){};
-
   void readOnepage(std::istream & f) {
     std::string line;
     //record the index of # in a line
@@ -234,8 +229,5 @@ class Page {
 
   std::vector<std::string> getNavigation() { return navigation; }
   std::vector<int> getChoices() { return pagechoices; }
-
   size_t getNavsize() { return navigation.size(); }
-  bool & getvisited() { return visited; }
-  int & getdist() { return dist; }
 };
