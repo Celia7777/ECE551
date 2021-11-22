@@ -14,10 +14,14 @@ class Page {
   std::vector<int> pagechoices;
   bool visited;
   int dist;
+  int prev_rank;
+  int rank;
 
  public:
   // default constructor
-  Page() : visited(false), dist(-1){};
+  Page() : visited(false), dist(-1), prev_rank(-1), rank(-1){};
+  // default destructor
+  ~Page(){};
 
   void readOnepage(std::istream & f) {
     std::string line;
@@ -238,4 +242,6 @@ class Page {
   size_t getNavsize() { return navigation.size(); }
   bool & getvisited() { return visited; }
   int & getdist() { return dist; }
+  int & getprev() { return prev_rank; }
+  int & getrank() { return rank; }
 };

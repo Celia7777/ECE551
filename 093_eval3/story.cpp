@@ -23,6 +23,7 @@ class Story {
 
     while (true) {
       Page page;
+
       std::ifstream f;
       std::string filename(directory);
       //std::cout << filename << std::endl;
@@ -47,6 +48,7 @@ class Story {
       }
       page.pushStory(f);
       //      page.printStory();
+      page.getrank() = story.size() + 1;
       story.push_back(page);
 
       pagenum++;
@@ -107,6 +109,29 @@ class Story {
       //  exit(EXIT_SUCCESS);
       //}
       storypg = movepage - 1;
+    }
+  }
+
+  template<typename T>
+  void findStorydepth() {
+    T container;
+    Page current;
+    // push the page 1 into queue, the start page
+    story[0].getvisited() = true;
+    story[0].getdist() = 0;
+    container.push(story[0]);
+
+    while (!container.empty()) {
+      current = container.front();
+      container.pop();
+      for (size_t i = 0; i < current.getChoices().size(); i++) {
+        if (!story[current.getChoices()[i] - 1].getvisited()) {
+          story[current.getChoices()[i] - 1].getvisited() = true;
+          story[current.getChoices()[i] - 1].getdist() = current.getdist() + 1;
+          story[current.getChoices()[i] - 1].getprev() = current.getrank();
+          container.push(story[current.getChoices()[i] - 1]);
+        }
+      }
     }
   }
 
