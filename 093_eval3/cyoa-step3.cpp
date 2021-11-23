@@ -48,8 +48,8 @@ int main(int argc, char ** argv) {
       exit(EXIT_FAILURE);
     }
   }
-  story.findStorydepth<std::queue<Page> >();
-  //story.findDepth();
+  //  story.findStorydepth<std::queue<Page> >();
+  story.findDepth();
   story.printDepth();
   //  story.createStory();
   //std::cout << verify << std::endl;

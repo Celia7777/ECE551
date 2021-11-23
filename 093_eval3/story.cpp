@@ -6,6 +6,8 @@
 #include <iostream>
 #include <istream>
 #include <queue>
+#include <stack>
+#include <utility>
 #include <vector>
 
 #include "page.cpp"
@@ -128,8 +130,51 @@ class Story {
         if (!story[current.getChoices()[i] - 1].getvisited()) {
           story[current.getChoices()[i] - 1].getvisited() = true;
           story[current.getChoices()[i] - 1].getdist() = current.getdist() + 1;
-          story[current.getChoices()[i] - 1].getprev() = current.getrank();
+          story[current.getChoices()[i] - 1].getprev().push_back(
+              std::make_pair(current.getrank(), i + 1));
           container.push(story[current.getChoices()[i] - 1]);
+        }
+        else if (story[current.getChoices()[i] - 1].getNavigation()[0].compare("WIN") ==
+                     0 ||
+                 story[current.getChoices()[i] - 1].getNavigation()[0].compare("LOSE") ==
+                     0) {
+          if (story[current.getChoices()[i] - 1].getprev().size() != 0) {
+            story[current.getChoices()[i] - 1].getprev().push_back(
+                std::make_pair(current.getrank(), i + 1));
+          }
+        }
+      }
+    }
+  }
+
+  void findPath() {
+    std::stack<Page> stack;
+    Page current;
+    // push the page 1 into queue, the start page
+    story[0].getvisited() = true;
+    story[0].getdist() = 0;
+    stack.push(story[0]);
+
+    while (!stack.empty()) {
+      current = stack.top();
+      stack.pop();
+      for (size_t i = 0; i < current.getChoices().size(); i++) {
+        if (!story[current.getChoices()[i] - 1].getvisited()) {
+          story[current.getChoices()[i] - 1].getvisited() = true;
+          story[current.getChoices()[i] - 1].getdist() = current.getdist() + 1;
+
+          story[current.getChoices()[i] - 1].getprev().push_back(
+              std::make_pair(current.getrank(), i + 1));
+          stack.push(story[current.getChoices()[i] - 1]);
+        }
+        else if (story[current.getChoices()[i] - 1].getNavigation()[0].compare("WIN") ==
+                     0 ||
+                 story[current.getChoices()[i] - 1].getNavigation()[0].compare("LOSE") ==
+                     0) {
+          if (story[current.getChoices()[i] - 1].getprev().size() != 0) {
+            story[current.getChoices()[i] - 1].getprev().push_back(
+                std::make_pair(current.getrank(), i + 1));
+          }
         }
       }
     }
@@ -154,6 +199,29 @@ class Story {
         }
       }
     }
+  }
+
+  void tracePath(size_t winpage, int root, std::vector<std::pair<int, int> > path) {
+    //base case
+    if (root == 1) {
+      //call print path
+      printPath(winpage, path);
+    }
+
+    //path.push_back(std::make_pair(root, -1));
+    for (size_t i = 0; i < story[root - 1].getprev().size(); i++) {
+      path.push_back(story[root - 1].getprev()[i]);
+      //      std::cout << "push one time!" << std::endl;
+      tracePath(winpage, story[root - 1].getprev()[i].first, path);
+    }
+  }
+
+  void printPath(size_t winpage, std::vector<std::pair<int, int> > & path) {
+    //    std::cout << "path size" << path.size() << std::endl;
+    for (int i = path.size() - 1; i >= 0; i--) {
+      std::cout << path[i].first << "(" << path[i].second << "), ";
+    }
+    std::cout << winpage << "(win)" << std::endl;
   }
 
   void printDepth() {
