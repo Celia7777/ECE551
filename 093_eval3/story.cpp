@@ -219,7 +219,7 @@ class Story {
   void printPath(size_t winpage, std::vector<std::pair<int, int> > & path) {
     //    std::cout << "path size" << path.size() << std::endl;
     for (int i = path.size() - 1; i >= 0; i--) {
-      std::cout << path[i].first << "(" << path[i].second << "), ";
+      std::cout << path[i].first << "(" << path[i].second << "),";
     }
     std::cout << winpage << "(win)" << std::endl;
   }
