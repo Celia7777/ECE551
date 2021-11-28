@@ -1,6 +1,6 @@
-Grading at 11/23/2021:05:39:37.861039
-For commit ID 546c1baff2e62db4bcdf8a3e22a26d90dd5c69e8
-Grading at Tue Nov 23 00:39:13 EST 2021
+Grading at 11/28/2021:22:08:39.948692
+For commit ID b5b9244ca33ac7eddfbec5bfd8386467ef1c0e73
+Grading at Sun Nov 28 17:08:07 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -113,6 +113,37 @@ Test case 18 (success): cyoa-step4 /usr/local/ece551/cyoa/story2
 Your file matched the expected output
 Step 4: PASSED Pre-Grader Test Cases
 Running your test cases
-Cannot proceed without testcases.txt
+
+Compiling cyoa-step1
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o page.o story.o
+g++    -c -o page.o page.cpp
+g++    -c -o story.o story.cpp
+g++    -c -o cyoa-step1.o cyoa-step1.cpp
+g++ -o cyoa-step1 cyoa-step1.o page.o story.o
+rm cyoa-step1.o
++-----------------------------------------------------------------------+
+Test case 1 (error): cyoa-step1 page_blankint.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 2 (error): cyoa-step1 page_blankline.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 3 (error): cyoa-step1 page_firstpound.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 4 (error): cyoa-step1 page_invalint.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 5 (error): cyoa-step1 page_nocol.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 6 (error): cyoa-step1 page_nopound.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 7 (success): cyoa-step1 story1/page1.txt
+Your file matched the expected output
+
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
