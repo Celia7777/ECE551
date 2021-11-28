@@ -5,7 +5,7 @@
 #include <istream>
 #include <string>
 
-#include "page.cpp"
+#include "page.h"
 
 int main(int argc, char ** argv) {
   // check command line arguments

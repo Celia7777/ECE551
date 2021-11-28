@@ -10,7 +10,7 @@
 #include <utility>
 #include <vector>
 
-#include "page.h"
+#include "page.cpp"
 
 class Story {
  private:
