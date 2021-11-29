@@ -30,7 +30,7 @@ int main(int argc, char ** argv) {
   //use the vefifyPage method to modify the variables
   //and use these variables to check if the page is valid or not
   for (size_t i = 0; i < story.getsize(); i++) {
-    verify = story.getstory()[i].verifyPage(pagenum, winnum, losenum, intvector);
+    verify = story.getstory()[i].verifyPage(pagenum, winnum, losenum, intvector, i);
   }
   //check WIN
   if (winnum == 0) {
@@ -45,6 +45,7 @@ int main(int argc, char ** argv) {
   }
   //check reference time
   for (int i = 0; i < pagenum; i++) {
+    std::cout << "reference num" << intvector[i] << std::endl;
     if (intvector[i] == 0 && i != 0) {
       std::cerr << "every page needs to be referenced at least once" << std::endl;
       exit(EXIT_FAILURE);

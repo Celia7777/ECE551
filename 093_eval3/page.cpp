@@ -121,7 +121,7 @@ int Page::checkNavigation(std::string & s) {
 }
 
 //Input the page file stream, and then create the page class
-//firstly check the # and the navigation part,
+//firstly check the #and the navigation part,
 //if they are both valid, push the navigation and text
 //into the corresponding vector structure
 void Page::pushStory(std::istream & f) {
@@ -187,7 +187,11 @@ void Page::printStory() {
 //To verify:
 //   1).every page that is referenced is valid, cannot be greater than the total page
 //   2).every page (except page 1) is referenced by at least one
-bool Page::verifyPage(int pagenum, int & win, int & lose, std::vector<int> & intvec) {
+bool Page::verifyPage(int pagenum,
+                      int & win,
+                      int & lose,
+                      std::vector<int> & intvec,
+                      size_t page) {
   std::string::size_type colonpos;
   std::string::size_type sz;
   std::string intstr;
@@ -203,7 +207,7 @@ bool Page::verifyPage(int pagenum, int & win, int & lose, std::vector<int> & int
       lose++;
     }
     else {
-      colonpos = navigation[i].find("#");
+      colonpos = navigation[i].find(":");
       intstr = navigation[i].substr(0, colonpos);
       integer = std::stoi(intstr, &sz);
       //the page is referenced cannot smaller or equal to 0, and cannot larger than total page
@@ -214,11 +218,12 @@ bool Page::verifyPage(int pagenum, int & win, int & lose, std::vector<int> & int
       }
       //modify the variable to verify the referenced choices
       else {
-        intvec[integer - 1]++;
+        if ((int)page + 1 != integer) {
+          intvec[integer - 1]++;
+        }
       }
     }
   }
-
   return true;
 }
 

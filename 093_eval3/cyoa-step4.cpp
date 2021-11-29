@@ -28,7 +28,7 @@ int main(int argc, char ** argv) {
   //  story.printStory();
   //std::cout << "story size" << story.getsize() << std::endl;
   for (size_t i = 0; i < story.getsize(); i++) {
-    verify = story.getstory()[i].verifyPage(pagenum, winnum, losenum, intvector);
+    verify = story.getstory()[i].verifyPage(pagenum, winnum, losenum, intvector, i);
   }
   //check WIN
   if (winnum == 0) {

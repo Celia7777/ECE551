@@ -29,7 +29,11 @@ class Page {
   int checkNavigation(std::string & s);
   void pushStory(std::istream & f);
   void printStory();
-  bool verifyPage(int pagenum, int & win, int & lose, std::vector<int> & intvec);
+  bool verifyPage(int pagenum,
+                  int & win,
+                  int & lose,
+                  std::vector<int> & intvec,
+                  size_t page);
 
   const std::vector<std::string> getNavigation() const;
   const std::vector<int> getChoices() const;
