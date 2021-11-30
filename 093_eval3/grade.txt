@@ -1,6 +1,6 @@
-Grading at 11/30/2021:03:05:14.279653
-For commit ID 7d2e728703df1d64e0d596f221fce244009290c9
-Grading at Mon Nov 29 22:04:45 EST 2021
+Grading at 11/30/2021:03:08:43.790549
+For commit ID 3ba9e2579fe06ed50d7bbeb8f29a7e039a0387d1
+Grading at Mon Nov 29 22:08:14 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -126,23 +126,9 @@ Test case 1 (success): cyoa-step3 story1
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 2 (success): cyoa-step3 story_unreachable
-5c5
-< Page 5 is not reachable.
----
-> Page 5 is not reachable
-10c10
-< Page 10 is not reachable.
----
-> Page 10 is not reachable
-13,14c13,14
-< Page 13 is not reachable.
-< Page 14 is not reachable.
----
-> Page 13 is not reachable
-> Page 14 is not reachable
-Your file did not match the expected output
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
