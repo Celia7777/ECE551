@@ -232,14 +232,17 @@ class Story {
   void printDepth() {
     for (size_t i = 0; i < story.size(); i++) {
       if (story[i].getdist() == -1) {
-        continue;
+        std::cout << "Page " << i + 1 << " is not reachable." << std::endl;
       }
-      std::cout << "Page " << i + 1 << ":" << story[i].getdist() << std::endl;
-    }
-    for (size_t i = 0; i < story.size(); i++) {
-      if (story[i].getdist() == -1) {
-        std::cout << "Page " << i + 1 << "is not reachable." << std::endl;
+      else {
+        std::cout << "Page " << i + 1 << ":" << story[i].getdist() << std::endl;
       }
     }
+    // for (size_t i = 0; i < story.size(); i++) {
+    //     if (story[i].getdist() == -1) {
+    //       std::cout << "Page " << i + 1 << "is not reachable." << std::endl;
+    //     }
+    //   }
+    // }
   }
 };

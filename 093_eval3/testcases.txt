@@ -1,4 +1,3 @@
 #success
-cyoa-step2 story1 < test_step2/val.txt
-#error
-cyoa-step2 story1 < invalstr.txt
+cyoa-step3 story1
+cyoa-step3 story_unreachable
