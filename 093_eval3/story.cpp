@@ -93,6 +93,9 @@ class Story {
             std::string invalinput;
             std::cin.clear();
             std::cin >> invalinput;
+            if (std::cin.eof()) {
+              exit(EXIT_FAILURE);
+            }
             continue;
           }
           if (integer <= 0 || integer > (int)story[storypg].getNavsize()) {
