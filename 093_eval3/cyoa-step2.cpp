@@ -45,7 +45,7 @@ int main(int argc, char ** argv) {
   }
   //check reference time
   for (int i = 0; i < pagenum; i++) {
-    std::cout << "reference num" << intvector[i] << std::endl;
+    //    std::cout << "reference num" << intvector[i] << std::endl;
     if (intvector[i] == 0 && i != 0) {
       std::cerr << "every page needs to be referenced at least once" << std::endl;
       exit(EXIT_FAILURE);

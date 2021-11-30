@@ -1,0 +1,10 @@
+#error
+cyoa-step1 page_blankint.txt
+cyoa-step1 page_blankline.txt
+cyoa-step1 page_firstpound.txt
+cyoa-step1 page_invalint.txt
+cyoa-step1 page_nocol.txt
+cyoa-step1 page_nopound.txt 
+
+#success
+cyoa-step1 story1/page1.txt
