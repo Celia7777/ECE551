@@ -1,4 +1,5 @@
 #success
 cyoa-step4 story1
 cyoa-step4 story_cycle
+cyoa-step4 story_cyclesec
 cyoa-step4 story_unwinnable

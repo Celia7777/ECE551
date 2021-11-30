@@ -156,33 +156,52 @@ class Story {
     std::stack<Page> stack;
     Page current;
     // push the page 1 into queue, the start page
-    story[0].getvisited() = true;
+    //story[0].getvisited() = true;
     story[0].getdist() = 0;
     stack.push(story[0]);
 
     while (!stack.empty()) {
       current = stack.top();
       stack.pop();
+      if (story[current.getrank() - 1].getvisited() == true) {
+        continue;
+      }
+      story[current.getrank() - 1].getvisited() = true;
       for (size_t i = 0; i < current.getChoices().size(); i++) {
-        if (!story[current.getChoices()[i] - 1].getvisited()) {
-          story[current.getChoices()[i] - 1].getvisited() = true;
+        if (!findPrevnode(story, story[current.getrank() - 1], current.getChoices()[i])) {
+          // if (!story[current.getChoices()[i] - 1].getvisited()) {
+          // story[current.getChoices()[i] - 1].getvisited() = true;
           story[current.getChoices()[i] - 1].getdist() = current.getdist() + 1;
 
           story[current.getChoices()[i] - 1].getprev().push_back(
               std::make_pair(current.getrank(), i + 1));
           stack.push(story[current.getChoices()[i] - 1]);
         }
-        else if (story[current.getChoices()[i] - 1].getNavigation()[0].compare("WIN") ==
-                     0 ||
-                 story[current.getChoices()[i] - 1].getNavigation()[0].compare("LOSE") ==
-                     0) {
-          if (story[current.getChoices()[i] - 1].getprev().size() != 0) {
-            story[current.getChoices()[i] - 1].getprev().push_back(
-                std::make_pair(current.getrank(), i + 1));
-          }
-        }
+        //}
+        // else if (story[current.getChoices()[i] - 1].getNavigation()[0].compare("WIN") ==
+        //              0 ||
+        //          story[current.getChoices()[i] - 1].getNavigation()[0].compare("LOSE") ==
+        //              0) {
+        //   if (story[current.getChoices()[i] - 1].getprev().size() != 0) {
+        //     story[current.getChoices()[i] - 1].getprev().push_back(
+        //         std::make_pair(current.getrank(), i + 1));
+        //   }
+        // }
+        //visited ??
       }
     }
+  }
+
+  bool findPrevnode(std::vector<Page> & s, Page & curr, int target) {
+    for (size_t i = 0; i < curr.getprev().size(); i++) {
+      if (curr.getprev()[i].first == target) {
+        return true;
+      }
+      if (findPrevnode(s, s[curr.getprev()[i].first - 1], target)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   void findDepth() {
@@ -215,8 +234,17 @@ class Story {
 
     //path.push_back(std::make_pair(root, -1));
     for (size_t i = 0; i < story[root - 1].getprev().size(); i++) {
+      if (i != 0) {
+        path.pop_back();
+      }
       path.push_back(story[root - 1].getprev()[i]);
-      //      std::cout << "push one time!" << std::endl;
+
+      //std::cout << story[0].getprev().size() << std::endl;
+
+      //std::cout << "path: " << std::endl;
+      // for (size_t i = 0; i < path.size(); i++) {
+      //   std::cout << path[i].first << std::endl;
+      // }
       tracePath(winpage, story[root - 1].getprev()[i].first, path);
     }
   }
