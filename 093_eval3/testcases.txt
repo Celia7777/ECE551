@@ -1,5 +1,5 @@
 #success
 cyoa-step2 story1 < test_step2/val.txt
 #error
-cyoa-step2 story1 < test_step2/invalint.txt
-cyoa-step2 story1 < test_step2/invalstr.txt
+cyoa-step2 story1 < invalint.txt
+cyoa-step2 story1 < invalstr.txt
