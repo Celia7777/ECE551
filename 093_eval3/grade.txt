@@ -1,6 +1,6 @@
-Grading at 11/30/2021:02:30:26.123390
-For commit ID a63e1e8d7d3a5655eee062952ac0989db971cdab
-Grading at Mon Nov 29 21:29:54 EST 2021
+Grading at 11/30/2021:02:32:39.402085
+For commit ID 9fb16cbdb14e12038b257017ff0fe112be31b2ed
+Grading at Mon Nov 29 21:32:11 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -122,19 +122,7 @@ g++    -c -o cyoa-step2.o cyoa-step2.cpp
 g++ -o cyoa-step2 cyoa-step2.o page.o story.o
 rm cyoa-step2.o
 +-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step2 story_nopage1
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step2 story_nolose
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step2 story_largepage
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step2 story_norefer
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step2 story1
+Test case 1 (error): cyoa-step2 story1
 One day, a strange old wizard comes to your village and tells you that
 there is an evil dragon lurking in the hills. This wizard's story explains
 why the village's goats and cows have been going missing lately.
