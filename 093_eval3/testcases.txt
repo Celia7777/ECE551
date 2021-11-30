@@ -1,3 +1,4 @@
 #success
-cyoa-step3 story1
-cyoa-step3 story_unreachable
+cyoa-step4 story1
+cyoa-step4 story_cycle
+cyoa-step4 story_unwinnable

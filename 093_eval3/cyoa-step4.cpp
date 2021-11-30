@@ -60,7 +60,13 @@ int main(int argc, char ** argv) {
   std::vector<std::pair<int, int> > path;
   for (size_t i = 0; i < story.getstory().size(); i++) {
     if (story.getstory()[i].getNavigation()[0].compare("WIN") == 0) {
-      story.tracePath(i + 1, i + 1, path);
+      if (story.getstory()[i].getprev().size() != 0) {
+        story.tracePath(i + 1, i + 1, path);
+      }
+      else {
+        std::cout << "This story is unwinnable!" << std::endl;
+        exit(EXIT_SUCCESS);
+      }
     }
   }
 

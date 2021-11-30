@@ -1,0 +1,3 @@
+#success
+cyoa-step3 story1
+cyoa-step3 story_unreachable
