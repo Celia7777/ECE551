@@ -1,6 +1,6 @@
-Grading at 11/30/2021:02:15:03.267114
-For commit ID f2f8a3237b13a02a1bd725fb3bffef8897ce7e25
-Grading at Mon Nov 29 21:14:27 EST 2021
+Grading at 11/30/2021:02:30:26.123390
+For commit ID a63e1e8d7d3a5655eee062952ac0989db971cdab
+Grading at Mon Nov 29 21:29:54 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -159,9 +159,9 @@ What would you like to do?
  1. Choose the magic whistle.
  2. Choose the magic shoes.
  3. Choose the magic toaster.
-Valgrind reported memory errors
+Your program successfully indicated a failure case
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
