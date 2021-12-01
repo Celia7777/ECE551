@@ -17,6 +17,14 @@ class Story {
   std::vector<Page> story;
 
  public:
+  ~Story(){};
+  //default destructor
+  // ~Story() {
+  //   for(size_t i=0;i<story.size();i++){
+  //     delete story[i];
+  //   }
+  // }
+
   //read the directory and check its filename
   //return the number of files
   int readInputstory(char * directory) {
