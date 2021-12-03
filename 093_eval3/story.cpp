@@ -17,7 +17,7 @@ class Story {
   std::vector<Page> story;
 
  public:
-  ~Story(){};
+  //  ~Story(){};
   //default destructor
   // ~Story() {
   //   for(size_t i=0;i<story.size();i++){

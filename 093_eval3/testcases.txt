@@ -1,5 +1,11 @@
+#error
+cyoa-step2 story_nopage1
+cyoa-step2 story_nolose
+cyoa-step2 story_largepage
+cyoa-step2 story_norefer
+cyoa-step2 story1 < test_step2/invalint.txt
+cyoa-step2 story1 < test_step2/invalstr.txt
+
 #success
-cyoa-step4 story1
-cyoa-step4 story_cycle
-cyoa-step4 story_cyclesec
-cyoa-step4 story_unwinnable
+cyoa-step2 story1
+cyoa-step2 story1 < test_step2/val.txt
