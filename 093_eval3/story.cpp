@@ -103,6 +103,7 @@ class Story {
         while (true) {
           std::cin >> integer;
           if (!std::cin.good()) {
+            //cerr还是cout
             std::cerr << "That is not a valid choice, please try again" << std::endl;
             std::string invalinput;
             std::cin.clear();
