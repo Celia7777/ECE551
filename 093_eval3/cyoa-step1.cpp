@@ -23,9 +23,7 @@ int main(int argc, char ** argv) {
   }
 
   Page page;
-  //size_t poundline;
-  //  poundline = page.findPound(f);
-  //std::cout << "pound appears in " << poundline << "\n";
+  //create the page class
   page.pushStory(f);
   page.printStory();
 

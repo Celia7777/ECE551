@@ -1,10 +1,17 @@
 #error
-cyoa-step1 page_blankint.txt
-cyoa-step1 page_blankline.txt
-cyoa-step1 page_firstpound.txt
-cyoa-step1 page_invalint.txt
-cyoa-step1 page_nocol.txt
-cyoa-step1 page_nopound.txt 
+cyoa-step2 story_nopage1
+cyoa-step2 story_nolose
+cyoa-step2 story_largepage
+cyoa-step2 story_norefer
+cyoa-step2 story1 < test_step2/invalint.txt
+cyoa-step2 story1 < test_step2/invalstr.txt
 
 #success
-cyoa-step1 story1/page1.txt
+cyoa-step2 story1
+cyoa-step2 story1 < test_step2/val.txt
+cyoa-step3 story1
+cyoa-step3 story_unreachable
+cyoa-step4 story1
+cyoa-step4 story_cycle
+cyoa-step4 story_cyclesec
+cyoa-step4 story_unwinnable

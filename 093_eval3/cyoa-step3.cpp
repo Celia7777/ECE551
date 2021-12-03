@@ -16,17 +16,19 @@ int main(int argc, char ** argv) {
 
   Story story;
   int pagenum;
+  //get how many pages a story have
   pagenum = story.readInputstory(argv[1]);
   bool verify;
   int winnum = 0;
   int losenum = 0;
   std::vector<int> intvector;
+  // initialize the integer vector with all 0
   for (int i = 0; i < pagenum; i++) {
     intvector.push_back(0);
-    //    std::cout << "originalint:" << intvector[i] << std::endl;
   }
-  //  story.printStory();
-  //std::cout << "story size" << story.getsize() << std::endl;
+  //check each page is valid or not
+  //use the verifyPage method to modify the variables
+  //and use these variables to check if the page is valid or not
   for (size_t i = 0; i < story.getsize(); i++) {
     verify = story.getstory()[i].verifyPage(pagenum, winnum, losenum, intvector, i);
   }
@@ -48,10 +50,9 @@ int main(int argc, char ** argv) {
       exit(EXIT_FAILURE);
     }
   }
-  //  story.findStorydepth<std::queue<Page> >();
+  //find the depth for each page
   story.findDepth();
   story.printDepth();
-  //  story.createStory();
-  //std::cout << verify << std::endl;
+
   return EXIT_SUCCESS;
 }

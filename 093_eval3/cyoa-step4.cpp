@@ -16,17 +16,19 @@ int main(int argc, char ** argv) {
 
   Story story;
   int pagenum;
+  //get how many pages a story have
   pagenum = story.readInputstory(argv[1]);
   bool verify;
   int winnum = 0;
   int losenum = 0;
   std::vector<int> intvector;
+  // initialize the integer vector with all 0
   for (int i = 0; i < pagenum; i++) {
     intvector.push_back(0);
-    //    std::cout << "originalint:" << intvector[i] << std::endl;
   }
-  //  story.printStory();
-  //std::cout << "story size" << story.getsize() << std::endl;
+  //check each page is valid or not
+  //use the verifyPage method to modify the variables
+  //and use these variables to check if the page is valid or not
   for (size_t i = 0; i < story.getsize(); i++) {
     verify = story.getstory()[i].verifyPage(pagenum, winnum, losenum, intvector, i);
   }
@@ -52,34 +54,12 @@ int main(int argc, char ** argv) {
   bool iswin;
   std::vector<std::pair<int, int> > path;
   path.push_back(std::make_pair(1, -1));
+  //find the story path from page1 to winpage
   story.findStoryPath(1, path, iswin);
+  //check if this story is unwinnable or not
   if (!iswin) {
     std::cout << "This story is unwinnable!" << std::endl;
   }
-
-  //story.findPath();
-
-  // for (size_t i = 0; i < story.getstory().size(); i++) {
-  //   std::cout << "for page: " << i + 1 << std::endl;
-  //   for (size_t j = 0; j < story.getstory()[i].getprev().size(); j++) {
-  //     std::cout << "previous page " << story.getstory()[i].getprev()[j].first
-  //               << ", from: " << story.getstory()[i].getprev()[j].second << std::endl;
-  //   }
-  // }
-
-  // std::vector<std::pair<int, int> > path;
-  // for (size_t i = 0; i < story.getstory().size(); i++) {
-  //   if (story.getstory()[i].getNavigation()[0].compare("WIN") == 0) {
-  //     //   story.tracePath(i + 1, i + 1, path);
-  //     if (story.getstory()[i].getprev().size() != 0) {
-  //       story.tracePath(i + 1, i + 1, path);
-  //     }
-  //     else {
-  //       std::cout << "This story is unwinnable!" << std::endl;
-  //       exit(EXIT_SUCCESS);
-  //     }
-  //   }
-  // }
 
   return EXIT_SUCCESS;
 }
