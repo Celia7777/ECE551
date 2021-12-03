@@ -48,27 +48,38 @@ int main(int argc, char ** argv) {
       exit(EXIT_FAILURE);
     }
   }
-  story.findPath();
-  for (size_t i = 0; i < story.getstory().size(); i++) {
-    std::cout << "for page: " << i + 1 << std::endl;
-    for (size_t j = 0; j < story.getstory()[i].getprev().size(); j++) {
-      std::cout << "previous page " << story.getstory()[i].getprev()[j].first
-                << ", from: " << story.getstory()[i].getprev()[j].second << std::endl;
-    }
+
+  bool iswin;
+  std::vector<std::pair<int, int> > path;
+  path.push_back(std::make_pair(1, -1));
+  story.findStoryPath(1, path, iswin);
+  if (!iswin) {
+    std::cout << "This story is unwinnable!" << std::endl;
   }
 
-  std::vector<std::pair<int, int> > path;
-  for (size_t i = 0; i < story.getstory().size(); i++) {
-    if (story.getstory()[i].getNavigation()[0].compare("WIN") == 0) {
-      //   story.tracePath(i + 1, i + 1, path);
-      if (story.getstory()[i].getprev().size() != 0) {
-        story.tracePath(i + 1, i + 1, path);
-      }
-      else {
-        std::cout << "This story is unwinnable!" << std::endl;
-        exit(EXIT_SUCCESS);
-      }
-    }
-  }
+  //story.findPath();
+
+  // for (size_t i = 0; i < story.getstory().size(); i++) {
+  //   std::cout << "for page: " << i + 1 << std::endl;
+  //   for (size_t j = 0; j < story.getstory()[i].getprev().size(); j++) {
+  //     std::cout << "previous page " << story.getstory()[i].getprev()[j].first
+  //               << ", from: " << story.getstory()[i].getprev()[j].second << std::endl;
+  //   }
+  // }
+
+  // std::vector<std::pair<int, int> > path;
+  // for (size_t i = 0; i < story.getstory().size(); i++) {
+  //   if (story.getstory()[i].getNavigation()[0].compare("WIN") == 0) {
+  //     //   story.tracePath(i + 1, i + 1, path);
+  //     if (story.getstory()[i].getprev().size() != 0) {
+  //       story.tracePath(i + 1, i + 1, path);
+  //     }
+  //     else {
+  //       std::cout << "This story is unwinnable!" << std::endl;
+  //       exit(EXIT_SUCCESS);
+  //     }
+  //   }
+  // }
+
   return EXIT_SUCCESS;
 }

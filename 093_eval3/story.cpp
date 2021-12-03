@@ -160,6 +160,38 @@ class Story {
     }
   }
 
+  void findStoryPath(int start, std::vector<std::pair<int, int> > path, bool & findwin) {
+    //base case:
+    if (story[start - 1].getNavigation()[0].compare("WIN") == 0) {
+      printPath(start, path);
+      findwin = true;
+    }
+
+    for (size_t i = 0; i < story[start - 1].getChoices().size(); i++) {
+      if (!isinpath(story[start - 1].getChoices()[i], path)) {
+        path.push_back(std::make_pair(story[start - 1].getChoices()[i], i + 1));
+        findStoryPath(story[start - 1].getChoices()[i], path, findwin);
+        path.pop_back();
+      }
+    }
+    // if (!findwin) {
+    //    std::cout << "This story is unwinnable!" << std::endl;
+    //  }
+  }
+
+  bool isinpath(int currpage, std::vector<std::pair<int, int> > path) {
+    for (size_t i = 0; i < path.size(); i++) {
+      if (currpage == path[i].first) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  //void printStoryPath(std::vector<std::pair<int, int>> path){
+
+  //}
+
   void findPath() {
     std::stack<Page> stack;
     Page current;
@@ -247,7 +279,7 @@ class Story {
       }
       path.push_back(story[root - 1].getprev()[i]);
 
-      //std::cout << story[0].getprev().size() << std::endl;
+      // std::cout << story[0].getprev().size() << std::endl;
 
       //std::cout << "path: " << std::endl;
       // for (size_t i = 0; i < path.size(); i++) {
@@ -259,8 +291,9 @@ class Story {
 
   void printPath(size_t winpage, std::vector<std::pair<int, int> > & path) {
     //    std::cout << "path size" << path.size() << std::endl;
-    for (int i = path.size() - 1; i >= 0; i--) {
-      std::cout << path[i].first << "(" << path[i].second << "),";
+    //path.pop_back();
+    for (size_t i = 0; i < path.size() - 1; i++) {
+      std::cout << path[i].first << "(" << path[i + 1].second << "),";
     }
     std::cout << winpage << "(win)" << std::endl;
   }
