@@ -51,7 +51,9 @@ int main(int argc, char ** argv) {
       exit(EXIT_FAILURE);
     }
   }
-  story.createStory();
+  if (story.createStory()) {
+    return EXIT_SUCCESS;
+  }
 
   return EXIT_SUCCESS;
 }

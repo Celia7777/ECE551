@@ -73,20 +73,11 @@ class Story {
       std::cerr << "no page1.txt" << std::endl;
       exit(EXIT_FAILURE);
     }
-
     return pagenum - 1;
   }
-
-  //void printStory() {
-  //for (size_t i = 0; i < story.size(); i++) {
-  //  story[i].printStory();
-  //}
-  //}
-
   size_t getsize() { return story.size(); }
   std::vector<Page> getstory() { return story; }
-
-  bool createStory() {
+  void createStory() {
     int integer;
     int storypg = 0;
     int movepage;
@@ -95,14 +86,14 @@ class Story {
       //check if WIN or LOSE page
       if (story[storypg].getNavigation()[0].compare("WIN") == 0 ||
           story[storypg].getNavigation()[0].compare("LOSE") == 0) {
-        return true;
-        //exit(EXIT_SUCCESS);
+        exit(EXIT_SUCCESS);
       }
       //内存错误
       else {
         while (true) {
           std::cin >> integer;
           if (!std::cin.good()) {
+	    //cerr还是cout
             std::cout << "That is not a valid choice, please try again" << std::endl;
             std::string invalinput;
             std::cin.clear();
@@ -119,7 +110,6 @@ class Story {
           break;
         }
       }
-
       movepage = story[storypg].getChoices()[integer - 1];
       //      std::cout << "move page" << movepage << std::endl;
       story[movepage - 1].printStory();
