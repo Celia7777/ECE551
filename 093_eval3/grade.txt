@@ -1,6 +1,6 @@
-Grading at 11/30/2021:21:12:23.999495
-For commit ID a13b983f619c2349eb4aa0585819baa4a2bbe9b1
-Grading at Tue Nov 30 16:11:54 EST 2021
+Grading at 12/03/2021:01:46:06.260729
+For commit ID f447440e7a267fb29ca176e033d421504a240167
+Grading at Thu Dec  2 20:45:34 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -107,24 +107,115 @@ g++ -o cyoa-step4 cyoa-step4.o page.o story.o
 rm cyoa-step4.o
 +-----------------------------------------------------------------------+
 Test case 17 (success): cyoa-step4 /usr/local/ece551/cyoa/story1
-Your file matched the expected output
+3,31d2
+< for page: 1
+< for page: 10
+< for page: 11
+< for page: 12
+< for page: 13
+< for page: 14
+< for page: 2
+< for page: 3
+< for page: 4
+< for page: 5
+< for page: 6
+< for page: 7
+< for page: 8
+< for page: 9
+< previous page 1, from: 1
+< previous page 1, from: 2
+< previous page 1, from: 3
+< previous page 2, from: 1
+< previous page 2, from: 2
+< previous page 2, from: 3
+< previous page 3, from: 1
+< previous page 3, from: 2
+< previous page 3, from: 3
+< previous page 4, from: 1
+< previous page 4, from: 2
+< previous page 4, from: 3
+< previous page 5, from: 1
+< previous page 5, from: 2
+< previous page 5, from: 3
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 18 (success): cyoa-step4 /usr/local/ece551/cyoa/story2
-Your file matched the expected output
-Step 4: PASSED Pre-Grader Test Cases
+4,28d3
+< for page: 1
+< for page: 10
+< for page: 11
+< for page: 12
+< for page: 2
+< for page: 3
+< for page: 4
+< for page: 5
+< for page: 6
+< for page: 7
+< for page: 8
+< for page: 9
+< previous page 12, from: 1
+< previous page 12, from: 2
+< previous page 1, from: 1
+< previous page 1, from: 2
+< previous page 1, from: 3
+< previous page 2, from: 1
+< previous page 2, from: 2
+< previous page 6, from: 1
+< previous page 6, from: 2
+< previous page 7, from: 1
+< previous page 7, from: 2
+< previous page 8, from: 1
+< previous page 8, from: 2
+Your file did not match the expected output
+Step 4: Failed test cases as above
 Running your test cases
+
+Compiling cyoa-step2
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o page.o story.o
+g++    -c -o page.o page.cpp
+g++    -c -o story.o story.cpp
+g++    -c -o cyoa-step2.o cyoa-step2.cpp
+g++ -o cyoa-step2 cyoa-step2.o page.o story.o
+rm cyoa-step2.o
 +-----------------------------------------------------------------------+
-Test case 1 (success): cyoa-step4 story1
-Your file matched the expected output
+Test case 1 (error): cyoa-step2 story_nopage1
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 2 (success): cyoa-step4 story_cycle
-Your file matched the expected output
+Test case 2 (error): cyoa-step2 story_nolose
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 3 (success): cyoa-step4 story_cyclesec
-Your file matched the expected output
+Test case 3 (error): cyoa-step2 story_largepage
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 4 (success): cyoa-step4 story_unwinnable
-Your file matched the expected output
+Test case 4 (error): cyoa-step2 story_norefer
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 5 (error): cyoa-step2 story1 < test_step2/invalint.txt
+One day, a strange old wizard comes to your village and tells you that
+there is an evil dragon lurking in the hills. This wizard's story explains
+why the village's goats and cows have been going missing lately.
+
+The wizard tells you: "It is up to you, hero, to stop this dragon. Nobody
+else in this village is foolish...errrr I mean brave enough to stop this
+dragon." 
+
+The wizard offers you a choice of one of three magic items to help you on
+your quest. 
+
+The first is a magic whistle that lets you make any bird call that you
+want. The second is a pair of magic shoes that let you jump 10 feet in the
+air. The third is a magic toaster, which can take any item that you can fit
+into it, and turn it into perfectly cooked toast (optionally with butter
+and/or jam). 
+
+"Choose wisely, for your quest and your village depend on you."
+
+What would you like to do?
+
+ 1. Choose the magic whistle.
+ 2. Choose the magic shoes.
+ 3. Choose the magic toaster.
+Your program successfully indicated a failure case
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
