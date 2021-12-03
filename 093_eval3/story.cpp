@@ -37,8 +37,6 @@ int Story::readInputstory(char * directory) {
     }
     //every time we read a valid page, create a page class
     page.pushStory(f);
-    //create the rank part in the page class
-    page.getrank() = story.size() + 1;
     //when we create one page, push it into the story vector
     story.push_back(page);
     pagenum++;

@@ -214,9 +214,3 @@ bool & Page::getvisited() {
 int & Page::getdist() {
   return dist;
 }
-std::vector<std::pair<int, int> > & Page::getprev() {
-  return prev_rank;
-}
-int & Page::getrank() {
-  return rank;
-}

@@ -22,12 +22,10 @@ class Page {
   std::vector<int> pagechoices;
   bool visited;
   int dist;
-  std::vector<std::pair<int, int> > prev_rank;
-  int rank;
 
  public:
   // default constructor
-  Page() : visited(false), dist(-1), rank(-1){};
+  Page() : visited(false), dist(-1){};
   // default destructor
   ~Page(){};
 
@@ -48,6 +46,4 @@ class Page {
 
   bool & getvisited();
   int & getdist();
-  std::vector<std::pair<int, int> > & getprev();
-  int & getrank();
 };
