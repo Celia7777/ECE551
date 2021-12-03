@@ -1,6 +1,6 @@
-Grading at 12/03/2021:03:24:29.265596
-For commit ID 828bcb862b0f6b51f5de81459a1cc51c4f761b4f
-Grading at Thu Dec  2 22:23:57 EST 2021
+Grading at 12/03/2021:03:28:45.195608
+For commit ID 9bcda57f607aaa057ade2bf791dd23951eee63fb
+Grading at Thu Dec  2 22:28:14 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -113,53 +113,21 @@ Test case 18 (success): cyoa-step4 /usr/local/ece551/cyoa/story2
 Your file matched the expected output
 Step 4: PASSED Pre-Grader Test Cases
 Running your test cases
-
-Compiling cyoa-step2
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o page.o story.o
-g++    -c -o page.o page.cpp
-g++    -c -o story.o story.cpp
-g++    -c -o cyoa-step2.o cyoa-step2.cpp
-g++ -o cyoa-step2 cyoa-step2.o page.o story.o
-rm cyoa-step2.o
 +-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step2 story_nopage1
-Your program successfully indicated a failure case
+Test case 1 (success): cyoa-step4 story1
+Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step2 story_nolose
-Your program successfully indicated a failure case
+Test case 2 (success): cyoa-step4 story_cycle
+Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step2 story_largepage
-Your program successfully indicated a failure case
+Test case 3 (success): cyoa-step4 story_cyclesec
+Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step2 story_norefer
-Your program successfully indicated a failure case
+Test case 4 (success): cyoa-step4 story_cycletest1
+Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step2 story1 < test_step2/invalint.txt
-One day, a strange old wizard comes to your village and tells you that
-there is an evil dragon lurking in the hills. This wizard's story explains
-why the village's goats and cows have been going missing lately.
-
-The wizard tells you: "It is up to you, hero, to stop this dragon. Nobody
-else in this village is foolish...errrr I mean brave enough to stop this
-dragon." 
-
-The wizard offers you a choice of one of three magic items to help you on
-your quest. 
-
-The first is a magic whistle that lets you make any bird call that you
-want. The second is a pair of magic shoes that let you jump 10 feet in the
-air. The third is a magic toaster, which can take any item that you can fit
-into it, and turn it into perfectly cooked toast (optionally with butter
-and/or jam). 
-
-"Choose wisely, for your quest and your village depend on you."
-
-What would you like to do?
-
- 1. Choose the magic whistle.
- 2. Choose the magic shoes.
- 3. Choose the magic toaster.
-Your program successfully indicated a failure case
+Test case 5 (success): cyoa-step4 story_unwinnable
+Your file matched the expected output
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
