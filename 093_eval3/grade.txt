@@ -1,6 +1,6 @@
-Grading at 12/03/2021:15:40:46.096445
-For commit ID d15771cfac7ca83100245870bd7a86b90b389aef
-Grading at Fri Dec  3 10:40:12 EST 2021
+Grading at 12/03/2021:19:42:12.592835
+For commit ID 569b56c91c3e1f0f5d5a363889b6894b19bc1f22
+Grading at Fri Dec  3 14:41:37 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -114,33 +114,33 @@ Your file matched the expected output
 Step 4: PASSED Pre-Grader Test Cases
 Running your test cases
 
-Compiling cyoa-step2
+Compiling cyoa-step1
 rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4  cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o page.o story.o
 g++    -c -o page.o page.cpp
 g++    -c -o story.o story.cpp
-g++    -c -o cyoa-step2.o cyoa-step2.cpp
-g++ -o cyoa-step2 cyoa-step2.o page.o story.o
-rm cyoa-step2.o
+g++    -c -o cyoa-step1.o cyoa-step1.cpp
+g++ -o cyoa-step1 cyoa-step1.o page.o story.o
+rm cyoa-step1.o
 +-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step2 story_nopage1
+Test case 1 (error): cyoa-step1 page_blankint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step2 story_nolose
+Test case 2 (error): cyoa-step1 page_blankline.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step2 story_largepage
+Test case 3 (error): cyoa-step1 page_firstpound.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step2 story_norefer
+Test case 4 (error): cyoa-step1 page_invalint.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (success): cyoa-step2 story1 < test_step2/correct1.txt
-Your file matched the expected output
+Test case 5 (error): cyoa-step1 page_nocol.txt
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 6 (success): cyoa-step2 story1 < test_step2/val.txt
-Your file matched the expected output
+Test case 6 (error): cyoa-step1 page_nopound.txt
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 7 (success): cyoa-step2 story1 < test_step2/invalcorrect.txt
+Test case 7 (success): cyoa-step1 story1/page1.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases
