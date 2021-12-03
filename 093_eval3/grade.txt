@@ -1,6 +1,6 @@
-Grading at 12/03/2021:15:18:13.466629
-For commit ID a1116c94c4ed01a5deea564fadea9ac848adafa0
-Grading at Fri Dec  3 10:17:42 EST 2021
+Grading at 12/03/2021:15:26:13.737714
+For commit ID d106901abb195e9e590dea35ebe0643752fcecb3
+Grading at Fri Dec  3 10:25:39 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -134,21 +134,24 @@ Your program successfully indicated a failure case
 Test case 4 (error): cyoa-step2 story_norefer
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 5 (success): cyoa-step2 story1
+Test case 5 (success): cyoa-step2 story1 < test_step2/correct1.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 6 (success): cyoa-step2 story1 < test_step2/val.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 7 (success): cyoa-step2 story1 < test_step2/invalint.txt
 We considered this an error case and gave the following message:
 Cannot read from stdin
-25a26,36
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
-> That is not a valid choice, please try again
+28d27
+< That is not a valid choice, please try again
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 8 (success): cyoa-step2 story1 < test_step2/invalstr.txt
+We considered this an error case and gave the following message:
+Cannot read from stdin
+29d28
+< That is not a valid choice, please try again
 Your file did not match the expected output
 
 You have FAILED one or more of your test cases
