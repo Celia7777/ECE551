@@ -8,13 +8,7 @@
 #include <vector>
 
 /* The is the Page class, which represents one page in a story */
-// Members in this class
-//  - navigation: a vector of strings to store the navigation in one page
-//  - text: a vector of strings to store the text in one page
-//  - pagechoices: a vector of integers to store different choices
-//                 in one page, if it's not win or lose page
-//  - dist: an interger to store the depth from page1 to this page
-
+// The member in this class
 class Page {
  private:
   std::vector<std::string> navigation;

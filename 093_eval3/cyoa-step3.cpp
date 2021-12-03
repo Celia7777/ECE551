@@ -5,7 +5,7 @@
 #include <istream>
 #include <string>
 
-#include "story.cpp"
+#include "story.h"
 
 int main(int argc, char ** argv) {
   // check command line arguments

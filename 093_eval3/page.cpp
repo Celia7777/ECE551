@@ -9,47 +9,14 @@
 #include <istream>
 #include <vector>
 
-void Page::readOnepage(std::istream & f) {
-  std::string line;
-  //record the index of # in a line
-  std::string::size_type pound_pos;
-  //the line number which is #
-  size_t pound_num = 0;
-  bool haspound = false;
-  //    size_t line_index = 0;
-  //bool checknav = false;
-
-  while (std::getline(f, line)) {
-    pound_pos = line.find("#");
-    //  std::cout << position << "\n";
-    if (pound_num == 0 && pound_pos == 0) {
-      std::cerr << "no navigation part, only a #\n";
-      exit(EXIT_FAILURE);
-    }
-
-    //find the valid #
-    if (pound_num != 0 && pound_pos == 0) {
-      haspound = true;
-      break;
-    }
-    pound_num++;
-  }
-  if (haspound == false) {
-    std::cerr << "we cannot find a valid #\n";
-    exit(EXIT_FAILURE);
-  }
-}
-
 //a method to parse the input story and check its #
 //if the # meets the requirements of the input format
 //return the line number of the #
 //if not, exit error
 size_t Page::findPound(std::istream & f) {
   std::string line;
-  //record the index of # in a line
-  std::string::size_type position;
-  //record this is which line
-  size_t line_num = 0;
+  std::string::size_type position;  //record the index of # in a line
+  size_t line_num = 0;              //record this is which line
   bool isfound = false;
 
   while (std::getline(f, line)) {
@@ -82,8 +49,7 @@ size_t Page::findPound(std::istream & f) {
 //if it is not an valid interger, exit failure
 int Page::checkNavigation(std::string & s) {
   std::string intstr;
-  // record the position of colon
-  std::string::size_type colonpos;
+  std::string::size_type colonpos;  // record the position of colon
   std::string::size_type sz;
   int integer;
 
@@ -96,14 +62,13 @@ int Page::checkNavigation(std::string & s) {
     //if the choice does not have colon,
     //or the : at first, no integer
     if (colonpos == s.npos || colonpos == 0) {
-      std::cerr << "no colon or at the colon is at the first, thus no integer part\n";
-      exit(EXIT_FAILURE);  //应该是return，还是exit
+      std::cerr << "no colon or the colon is at the first, thus no integer part\n";
+      exit(EXIT_FAILURE);
     }
     //check if the integer part is valid or not
     else {
       intstr = s.substr(0, colonpos);
       for (size_t i = 0; i < colonpos; i++) {
-        //空格对不对？
         if (std::isdigit(intstr[i]) == 0) {
           std::cerr << "the part before colon is not invalid integer\n";
           exit(EXIT_FAILURE);
@@ -122,8 +87,8 @@ int Page::checkNavigation(std::string & s) {
 
 //Input the page file stream, and then create the page class
 //firstly check the #and the navigation part,
-//if they are both valid, push the navigation and text
-//into the corresponding vector structure
+//if they are both valid, push the navigation, text, and
+//pagechoices into the corresponding vector structure
 void Page::pushStory(std::istream & f) {
   std::string line;
   size_t line_num;
@@ -144,7 +109,6 @@ void Page::pushStory(std::istream & f) {
         //process the choices of each page
         pagechoices.push_back(checknav);
       }
-
       navigation.push_back(line);
     }
     //process the text part, which is after #
@@ -187,6 +151,9 @@ void Page::printStory() {
 //To verify:
 //   1).every page that is referenced is valid, cannot be greater than the total page
 //   2).every page (except page 1) is referenced by at least one
+//the parameters win, lose, and intvec are all references, since
+//this function is to modify their values, and then use them in main
+//to check the page is valid or not
 bool Page::verifyPage(int pagenum,
                       int & win,
                       int & lose,
@@ -211,12 +178,14 @@ bool Page::verifyPage(int pagenum,
       intstr = navigation[i].substr(0, colonpos);
       integer = std::stoi(intstr, &sz);
       //the page is referenced cannot smaller or equal to 0, and cannot larger than total page
-      //改过，以前是integer==0
       if (integer <= 0 || integer > pagenum) {
         std::cerr << "the page referenced is invalid" << std::endl;
         exit(EXIT_FAILURE);
       }
       //modify the variable to verify the referenced choices
+      //the vector of integers represent each page in a story
+      //the value is the times they are references by other pages
+      //so if one element is 0, which means this page(index+1) is not referenced
       else {
         if ((int)page + 1 != integer) {
           intvec[integer - 1]++;
