@@ -103,7 +103,7 @@ class Story {
         while (true) {
           std::cin >> integer;
           if (!std::cin.good()) {
-            std::cout << "That is not a valid choice, please try again" << std::endl;
+            std::cerr << "That is not a valid choice, please try again" << std::endl;
             std::string invalinput;
             std::cin.clear();
             std::cin >> invalinput;
@@ -113,7 +113,7 @@ class Story {
             continue;
           }
           if (integer <= 0 || integer > (int)story[storypg].getNavsize()) {
-            std::cout << "That is not a valid choice, please try again" << std::endl;
+            std::cerr << "That is not a valid choice, please try again" << std::endl;
             continue;
           }
           break;
